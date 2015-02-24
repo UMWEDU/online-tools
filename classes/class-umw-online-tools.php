@@ -102,10 +102,10 @@ class UMW_Online_Tools {
     $output = '';
     $format = '<li><a href="%1$s"><img src="%2$s?v=%3$s" alt=""/>%4$s</a></li>';
     foreach ( $this->icons as $i ) {
-      if ( ! esc_url( $i['icon'] ) ) {
+      if ( ! stristr( '//', $i['icon'] ) ) {
         $i['icon'] = plugins_url( sprintf( 'images/icons/svg-online-tools/24px-blue/umwicon-%1$s.png', $i['icon'] ), dirname( __FILE__ ) );
       }
-      $output .= sprintf( $format, esc_url( $i['link'] ), $i['icon'], $this->v, $i['name'] );
+      $output .= sprintf( $format, esc_url( $i['link'] ), esc_url( $i['icon'] ), $this->v, $i['name'] );
     }
     printf( '<aside class="umw-helpful-links"><ul class="umw-tools">%s</ul><br style="clear:both;"/></aside>', $output );
   }
