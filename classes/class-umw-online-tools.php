@@ -25,7 +25,7 @@ class UMW_Online_Tools {
       remove_action( 'genesis_before_header', 'umw_do_help_section' );
     }
 
-    add_action( 'genesis_before_header', array( $this, 'do_toolbar' ) );
+    add_action( 'genesis_before_header', array( $this, 'do_toolbar' ), 1 );
     add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
   }
 
