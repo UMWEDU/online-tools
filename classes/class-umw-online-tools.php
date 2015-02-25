@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class UMW_Online_Tools {
-  public $v = '0.2';
+  public $v = '0.2.1';
   public $icons = array();
 
   function __construct() {
@@ -25,7 +25,7 @@ class UMW_Online_Tools {
       remove_action( 'genesis_before_header', 'umw_do_help_section' );
     }
 
-    add_action( 'genesis_before_header', array( $this, 'do_toolbar' ), 1 );
+    add_action( 'genesis_before', array( $this, 'do_toolbar' ), 1 );
     add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
   }
 

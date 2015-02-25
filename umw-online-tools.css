@@ -1,3 +1,12 @@
+body .umw-helfpful-links {
+	background: #c9cac2;
+	color: #002b5a;
+}
+
+body .umw-helpful-links * {
+	color: #002b5a;
+}
+
 .umw-helpful-links {
 	position: relative;
 	z-index: 12;
