@@ -26,11 +26,13 @@ class UMW_Online_Tools {
     }
 
     add_action( 'genesis_before', array( $this, 'do_toolbar' ), 1 );
+	add_action( 'genesis_before', array( $this, 'do_header_bar' ), 5 );
     add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
   }
 
   function enqueue_styles() {
     wp_enqueue_style( 'umw-online-tools', plugins_url( 'umw-online-tools.css', dirname( __FILE__ ) ), array(), $this->v, 'all' );
+	add_action( 'wp_print_styles', array( $this, 'do_header_bar_styles' ) );
   }
 
   function gather_icons() {
@@ -109,4 +111,24 @@ class UMW_Online_Tools {
     }
     printf( '<aside class="umw-helpful-links"><ul class="umw-tools">%s</ul><br style="clear:both;"/></aside>', $output );
   }
+  
+	/**
+	 * Output the header bar
+	 */
+	function do_header_bar() {
+		if ( ! has_action( 'umw-main-header-bar' ) )
+			return false;
+			
+		echo '
+<aside class="umw-header-bar">
+	<div class="wrap">';
+		do_action( 'umw-main-header-bar' );
+		echo '
+	</div>
+</aside>';
+	}
+	
+	function do_header_bar_styles() {
+		do_action( 'umw-main-header-bar-styles' );
+	}
 }
