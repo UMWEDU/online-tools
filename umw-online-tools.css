@@ -1,126 +1,189 @@
-body .umw-helpful-links {
-	background: #c9cac2;
-	color: #002b5a;
-}
-
-body .umw-helpful-links * {
-	color: #002b5a;
+/**
+ * Styles for the UMW Online Tool Bar and Global Header Bar
+ */
+.umw-helpful-links, 
+.umw-helpful-links * {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 }
 
 .umw-helpful-links {
-	position: relative;
-	z-index: 12;
-	display: block;
 	width: 100%;
-	margin: 0 auto;
-	padding: 0;
-	box-sizing: border-box;
-	box-shadow: 1px 0 8px rgba(0,0,0,.7);
-	-webkit-box-shadow: 1px 0 8px rgba(0,0,0,.7);
-	-moz-box-shadow: 1px 0 8px rgba(0,0,0,.7);
+	max-width: 100%;
+	min-width: 100%;
+	clear: both;
+	float: none;
+	background: #4d6b8b;
+	color: #fff;
+	position: relative;
+	z-index: 15;
 }
 
 .umw-helpful-links .umw-tools {
 	display: block;
-	vertical-align: top;
 	width: 100%;
 	max-width: 960px;
 	margin: 0 auto;
-	box-sizing: border-box;
+	padding: 0;
+}
+
+.umw-helpful-links .umw-tools > li {
+	display: inline-block;
+	float: left;
+	padding: 20px 0;
+	margin: 0;
+	width: 8.333333333333333%;
+	font-size: 11px;
+}
+
+.umw-helpful-links .umw-tools a {
+	display: block;
+	margin: 0;
+	padding: 10px 0;
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	color: #fff;
+	background: transparent;
+	border: none;
+	text-decoration: none;
+	text-align: center;
+}
+
+.umw-helpful-links .umw-tools a:hover, 
+.umw-helpful-links .umw-tools a:focus {
+	background: #002b5a;
+	color: #fff;
+	border: none;
+	text-decoration: none;
 }
 
 .umw-helpful-links .umw-tools img {
 	display: block;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	height: 26px;
+	margin: 0 auto;
+	padding: 4px;
+	max-width: 100%;
 	width: auto;
-	padding: 4px 0;
-}
-
-#umw-nav .umw-helpful-links .umw-tools a {
-	font-size: 10px;
-	padding: 10% 5%;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-}
-
-.umw-helpful-links .umw-tools .genericon,
-#umw-nav .umw-helpful-links .umw-tools .genericon {
-	font-size: 24px;
-	display: block;
-	width: 100%;
 	height: 26px;
-	text-align: center;
-	font-weight: normal;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	float: none;
-	position: static;
-	margin: 0 auto 1%;
-	padding: 0;
+	filter: invert(100%) contrast(1000%);
+	-webkit-filter: invert(100%) contrast(1000%);
+	-moz-filter: invert(100%) contrast(1000%);
+	-o-filter: invert(100%) contrast(1000%);
+	-ms-filter: invert(100%) contrast(1000%);
 }
 
-.umw-helpful-links .umw-tools li,
-#umw-nav .umw-helpful-links .umw-tools li {
+/**
+ * Audience Menu Styles
+ */
+.umw-audience-menu {
+	display: block;
+	float: right;
+}
+
+.umw-audience-menu li {
 	display: inline-block;
 	float: left;
-	list-style: none;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	width: 8.33333333333333%;
-	padding: 0;
-	font-size: 10px;
-	vertical-align: top;
-	text-align: center;
-	line-height: normal;
+	width: auto;
+	font-size: 11px;
+	padding: 10px 0;
 }
 
-.umw-helpful-links img {
+.umw-audience-menu a {
+	color: #fff;
 	display: block;
-	margin: 0 auto;
-	max-width: 100%;
-	padding-bottom: 1%;
-}
-
-.umw-helpful-links a,
-#umw-nav .umw-helpful-links a {
-	display: block;
-	text-decoration: none;
-	border: none;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	width: 100%;
-	padding: 5% 0;
+	padding: 0 10px;
 	margin: 0;
+	line-height: 22px;
+	border-right: 1px solid #fff;
 }
 
-.umw-helpful-links a:hover,
-.umw-helpful-links a:focus {
-	text-decoration: none;
-	border: none;
+.umw-header-bar ul, 
+.umw-header-bar ul > li, 
+.umw-header-bar ol, 
+.umw-header-bar ol > li {
+	list-style: none;
+}
+
+.umw-header-bar #umw-global-logo {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 11px 0 12px;
+	margin: 0;
+	float: left;
+	display: block;
+	height: 42px;
+	vertical-align: middle;
+}
+
+.umw-header-bar #umw-global-logo svg {
+	height: 19px;
+	width: 375px;
+	max-height: 100%;
+	max-width: 100%;
 }
 
 @media all and (max-width: 1023px) {
-  .umw-helpful-links {
+	.umw-header-bar {
 		display: none;
 	}
-
-  .menu-bar-open .umw-helpful-links {
+	
+	.umw-header-bar.no-global-header {
 		display: block;
 	}
-
-  .umw-helpful-links .umw-tools li,
+	
+	.umw-helpful-links .umw-tools a {
+		color: #fff !important;
+		background: transparent !important;
+		padding: 10px 0 !important;
+	}
+	
+	.umw-helpful-links .umw-tools a:hover, 
+	.umw-helpful-links .umw-tools a:focus {
+		background: #002b5a !important;
+		color: #fff !important;
+	}
+	
+	.umw-helpful-links {
+		display: none;
+		background: #4d6b8b !important;
+		font-size: 11px !important;
+	}
+	
+	.menu-bar-open .umw-helpful-links {
+		display: block;
+	}
+	
+	.umw-helpful-links .umw-tools li,
 	#umw-nav .umw-helpful-links .umw-tools li {
 		width: 16.66666666666667%;
 	}
-
+	
 	.umw-helpful-links .umw-tools li:nth-child( 6n ) {
 		clear: right;
 	}
-
+	
 	.umw-helpful-links .umw-tools li:nth-child( 6n + 1 ) {
 		clear: left;
+	}
+}
+
+@media all and (max-width: 750px) {
+	.umw-header-bar {
+		height: auto;
+	}
+	
+	.umw-header-bar #umw-global-logo, 
+	.umw-audience-menu {
+		float: none;
+		clear: both;
+		margin: 0 auto;
+		width: auto;
+		text-align: center;
+		background: rgb( 0, 48, 94 );
+	}
+	
+	.umw-audience-menu li {
+		width: 25%;
 	}
 }
 

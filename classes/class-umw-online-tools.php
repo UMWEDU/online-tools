@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class UMW_Online_Tools {
-  public $v = '0.2.2';
+  public $v = '0.2.23';
   public $icons = array();
 
   function __construct() {
@@ -28,6 +28,12 @@ class UMW_Online_Tools {
     add_action( 'genesis_before', array( $this, 'do_toolbar' ), 1 );
 	add_action( 'genesis_before', array( $this, 'do_header_bar' ), 5 );
     add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+	add_action( 'umw-main-header-bar', array( $this, 'do_test_menu' ), 11 );
+	
+	if ( function_exists( 'umw_is_full_header' ) && ! umw_is_full_header() ) {
+		remove_action( 'genesis_header', 'umw_do_global_header' );
+		add_action( 'umw-main-header-bar', array( $this, 'do_wordmark' ), 5 );
+	}
   }
 
   function enqueue_styles() {
@@ -118,9 +124,13 @@ class UMW_Online_Tools {
 	function do_header_bar() {
 		if ( ! has_action( 'umw-main-header-bar' ) )
 			return false;
-			
+		
+		$c = array( 'umw-header-bar' );
+		if ( function_exists( 'umw_is_full_header' ) && ! umw_is_full_header() ) {
+			$c[] = 'no-global-header';
+		}
 		echo '
-<aside class="umw-header-bar">
+<aside class="' . implode( ' ', $c ) . '">
 	<div class="wrap">';
 		do_action( 'umw-main-header-bar' );
 		echo '
@@ -130,5 +140,37 @@ class UMW_Online_Tools {
 	
 	function do_header_bar_styles() {
 		do_action( 'umw-main-header-bar-styles' );
+	}
+	
+	function do_wordmark() {
+		$logo = get_mnetwork_transient( 'umw-global-logo', false );
+		if ( false === $logo ) {
+			/*$logo = get_bloginfo('stylesheet_directory') . '/images/logo_global.png';*/
+			$logo = str_replace( '<svg ', '<svg id="umw-global-logo-img" ', file_get_contents( get_stylesheet_directory() . '/images/umw-linear-wordmark-optimized.svg' ) );
+			set_mnetwork_transient( 'umw-global-logo', $logo, HOUR_IN_SECONDS );
+		}
+?>
+<a id="umw-global-logo" href="<?php echo get_site_url(1); ?>" title="Home"><?php echo $logo ?></a>
+<?php
+	}
+	
+	function do_test_menu() {
+		$h = gethostname();
+		if ( stristr( $h, '.wtf' ) || stristr( $h, 'testumw.local' ) ) {
+			$host = 'http://%2$s.umw.wtf%1$s';
+		} else if ( stristr( $h, '.red' ) || stristr( $h, 'umw.local' ) ) {
+			$host = 'http://%2$s.umw.red%1$s';
+		} else {
+			$host = 'http://%2$s.umw.edu%1$s';
+		}
+?>
+<ul class="umw-audience-menu">
+	<li><a href="<?php printf( $host, '/faculty/', 'www' ) ?>">Faculty &amp; Staff</a></li>
+	<li><a href="<?php printf( $host, '/students/', 'www' ) ?>">Students</a></li>
+	<li><a href="<?php printf( $host, '/', 'alumni' ) ?>">Alumni</a></li>
+	<li><a href="<?php printf( $host, '/', 'giving' ) ?>">Give</a></li>
+	<li style="width: 0; height: 0; line-height: 0; font-size: 0; margin: 0; padding: 0; overflow: hidden; float: none; clear: both; display: block;"></li>
+</ul>
+<?php
 	}
 }
