@@ -122,12 +122,38 @@
 	max-width: 100%;
 }
 
+#umw-global-logo {
+	display: none;
+}
+
+.no-global-header #umw-global-logo {
+	display: block;
+}
+
+.artsGenesis #header {
+	position: relative;
+}
+
+.jamesmonroemuseum, .philharmonic {
+	background: #000;
+}
+
 @media all and (max-width: 1023px) {
-	.umw-header-bar {
+	body #umw-custom-background #header > .wrap {
+		margin: 0;
+		padding: 0;
+	}
+	
+	#umw-logo-block {
 		display: none;
 	}
 	
-	.umw-header-bar.no-global-header {
+	#inner {
+		padding-top: 0;
+		margin-top: 0;
+	}
+	
+	#umw-global-logo {
 		display: block;
 	}
 	
@@ -185,9 +211,26 @@
 	.umw-audience-menu li {
 		width: 25%;
 	}
+	
+	.umw-audience-menu li:nth-child( 4n ) a {
+		border: none;
+	}
 }
 
 @media all and (max-width: 480px) {
+	.umw-header-bar #umw-global-logo {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	
+	.umw-audience-menu li {
+		width: 50%;
+	}
+	
+	.umw-audience-menu li:nth-child( even ) a {
+		border: none;
+	}
+	
   .umw-helpful-links .umw-tools li,
 	#umw-nav .umw-helpful-links .umw-tools li {
 		width: 25%;

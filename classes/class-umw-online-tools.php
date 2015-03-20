@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class UMW_Online_Tools {
-  public $v = '0.2.23';
+  public $v = '0.2.35';
   public $icons = array();
 
   function __construct() {
@@ -30,9 +30,17 @@ class UMW_Online_Tools {
     add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 	add_action( 'umw-main-header-bar', array( $this, 'do_test_menu' ), 11 );
 	
-	if ( function_exists( 'umw_is_full_header' ) && ! umw_is_full_header() ) {
+	add_action( 'umw-main-header-bar', array( $this, 'do_wordmark' ), 5 );
+	if ( has_action( 'genesis_header', 'umw_do_global_header' ) ) {
 		remove_action( 'genesis_header', 'umw_do_global_header' );
-		add_action( 'umw-main-header-bar', array( $this, 'do_wordmark' ), 5 );
+	}
+	
+	/*if ( function_exists( 'umw_is_full_header' ) && umw_is_full_header() ) {
+		remove_action( 'umw-main-header-bar', array( $this, 'do_wordmark' ), 5 );
+	}*/
+	
+	if ( ! function_exists( 'umw_is_full_header' ) ) {
+		remove_action( 'genesis_before', array( $this, 'do_header_bar' ), 5 );
 	}
   }
 
@@ -125,9 +133,9 @@ class UMW_Online_Tools {
 		if ( ! has_action( 'umw-main-header-bar' ) )
 			return false;
 		
-		$c = array( 'umw-header-bar' );
-		if ( function_exists( 'umw_is_full_header' ) && ! umw_is_full_header() ) {
-			$c[] = 'no-global-header';
+		$c = array( 'umw-header-bar', 'no-global-header' );
+		if ( function_exists( 'umw_is_full_header' ) && umw_is_full_header() ) {
+			array_pop( $c );
 		}
 		echo '
 <aside class="' . implode( ' ', $c ) . '">
