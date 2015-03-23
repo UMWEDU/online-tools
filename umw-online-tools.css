@@ -65,11 +65,12 @@
 	max-width: 100%;
 	width: auto;
 	height: 26px;
+	/* No longer necessary, since we modified the images themselves
 	filter: invert(100%) contrast(1000%);
 	-webkit-filter: invert(100%) contrast(1000%);
 	-moz-filter: invert(100%) contrast(1000%);
 	-o-filter: invert(100%) contrast(1000%);
-	-ms-filter: invert(100%) contrast(1000%);
+	-ms-filter: invert(100%) contrast(1000%);*/
 }
 
 /**
@@ -110,24 +111,21 @@
 	padding: 11px 0 12px;
 	margin: 0;
 	float: left;
-	display: block;
+	display: none;
 	height: 42px;
 	vertical-align: middle;
 }
 
-.umw-header-bar #umw-global-logo svg {
+.umw-header-bar.no-global-header #umw-global-logo {
+	display: block;
+}
+
+.umw-header-bar #umw-global-logo svg, 
+.umw-header-bar #umw-global-logo-img {
 	height: 19px;
 	width: 375px;
 	max-height: 100%;
 	max-width: 100%;
-}
-
-#umw-global-logo {
-	display: none;
-}
-
-.no-global-header #umw-global-logo {
-	display: block;
 }
 
 .artsGenesis #header {
@@ -153,6 +151,7 @@
 		margin-top: 0;
 	}
 	
+	.umw-header-bar #umw-global-logo, 
 	#umw-global-logo {
 		display: block;
 	}

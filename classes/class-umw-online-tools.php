@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class UMW_Online_Tools {
-  public $v = '0.2.35';
+  public $v = '0.2.38';
   public $icons = array();
 
   function __construct() {
@@ -119,7 +119,7 @@ class UMW_Online_Tools {
     $format = '<li><a href="%1$s"><img src="%2$s?v=%3$s" alt=""/>%4$s</a></li>';
     foreach ( $this->icons as $i ) {
       if ( ! stristr( '//', $i['icon'] ) ) {
-        $i['icon'] = plugins_url( sprintf( 'images/icons/svg-online-tools/24px-blue/umwicon-%1$s.png', $i['icon'] ), dirname( __FILE__ ) );
+        $i['icon'] = plugins_url( sprintf( 'images/icons/svg-online-tools/24px-white/umwicon-%1$s.png', $i['icon'] ), dirname( __FILE__ ) );
       }
       $output .= sprintf( $format, esc_url( $i['link'] ), esc_url( $i['icon'] ), $this->v, $i['name'] );
     }
