@@ -46,6 +46,7 @@ class UMW_Online_Tools {
 
   function enqueue_styles() {
     wp_enqueue_style( 'umw-online-tools', plugins_url( 'umw-online-tools.css', dirname( __FILE__ ) ), array(), $this->v, 'all' );
+	wp_add_inline_style( 'umw-online-tools', 'body > .umw-helpful-links { background: rgb( 77, 107, 139 ); color: #fff; } body > .umw-helpful-links a { color: #fff; }' );
 	add_action( 'wp_print_styles', array( $this, 'do_header_bar_styles' ) );
   }
 
