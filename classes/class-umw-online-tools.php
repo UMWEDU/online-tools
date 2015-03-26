@@ -174,10 +174,9 @@ class UMW_Online_Tools {
 		}
 ?>
 <ul class="umw-audience-menu">
-	<li><a href="<?php printf( $host, '/faculty/', 'www' ) ?>">Faculty &amp; Staff</a></li>
-	<li><a href="<?php printf( $host, '/students/', 'www' ) ?>">Students</a></li>
+	<li><a href="<?php printf( $host, '/in/', 'www' ) ?>">Faculty &amp; Staff</a></li>
 	<li><a href="<?php printf( $host, '/', 'alumni' ) ?>">Alumni</a></li>
-	<li><a href="<?php printf( $host, '/', 'giving' ) ?>">Give</a></li>
+	<li><a href="<?php printf( $host, '/mwfirst/', 'giving' ) ?>">Give</a></li>
 	<li style="width: 0; height: 0; line-height: 0; font-size: 0; margin: 0; padding: 0; overflow: hidden; float: none; clear: both; display: block;"></li>
 </ul>
 <?php
