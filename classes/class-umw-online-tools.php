@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class UMW_Online_Tools {
-  public $v = '0.2.41';
+  public $v = '0.2.45';
   public $icons = array();
 
   function __construct() {
@@ -142,6 +142,7 @@ class UMW_Online_Tools {
 	<div class="wrap">';
 		do_action( 'umw-main-header-bar' );
 		echo '
+		<br class="desktop-clear"/>
 	</div>
 </aside>';
 	}
