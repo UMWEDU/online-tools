@@ -76,6 +76,11 @@
 /**
  * Audience Menu Styles
  */
+.umw-header-bar > .wrap > *, 
+.umw-header-bar ul {
+	margin: 0;
+}
+
 .umw-audience-menu {
 	display: block;
 	float: right;
@@ -116,7 +121,8 @@
 	vertical-align: middle;
 }
 
-.umw-header-bar.no-global-header #umw-global-logo {
+.umw-header-bar.no-global-header #umw-global-logo, 
+.custom-umw-theme .umw-header-bar #umw-global-logo {
 	display: block;
 }
 
@@ -126,6 +132,10 @@
 	width: 375px;
 	max-height: 100%;
 	max-width: 100%;
+}
+
+.umw-header-bar #umw-global-logo svg .style0 {
+	fill: #ffffff;
 }
 
 .artsGenesis #header {

@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class UMW_Online_Tools {
-  public $v = '0.3.1';
+  public $v = '0.3.7';
   public $icons = array();
   public $options = array();
 
@@ -54,8 +54,12 @@ class UMW_Online_Tools {
 	
 	$this->get_options();
 	
-	if ( ! $this->is_main_umw_theme() && false === $this->options['global-bar'] ) {
-		remove_action( 'genesis_before', array( $this, 'do_header_bar' ), 5 );
+	if ( false === $this->is_main_umw_theme() ) {
+		add_filter( 'body_class', array( $this, 'non_main_body_class' ) );
+		
+		if ( false === $this->options['global-bar'] ) {
+			remove_action( 'genesis_before', array( $this, 'do_header_bar' ), 5 );
+		}
 	}
   }
 
@@ -187,6 +191,9 @@ class UMW_Online_Tools {
 	 * Output the wordmark logo in the global toolbar
 	 */
 	function do_wordmark() {
+		if ( false === $this->options['global-bar'] || false === $this->options['wordmark'] )
+			return;
+		
 		$logo = get_mnetwork_transient( 'umw-global-logo', false );
 		if ( false === $logo ) {
 			/*$logo = get_bloginfo('stylesheet_directory') . '/images/logo_global.png';*/
@@ -202,6 +209,9 @@ class UMW_Online_Tools {
 	 * Output the audience menu
 	 */
 	function do_audience_menu() {
+		if ( false === $this->options['global-bar'] || false === $this->options['audience-menu'] )
+			return;
+		
 		$h = gethostname();
 		if ( stristr( $h, '.wtf' ) || stristr( $h, 'testumw.local' ) ) {
 			$host = 'http://%2$s.umw.wtf%1$s';
@@ -245,7 +255,11 @@ class UMW_Online_Tools {
 	function get_options() {
 		$options = get_option( 'umw-toolbar-settings', array( 'global-bar' => false ) );
 		if ( $this->is_main_umw_theme() ) {
-			$options = array( 'global-bar' => true, 'wordmark' => true, 'search' => true, 'audience-menu' => true );
+			$options = apply_filters( 'umw-toolbar-default-settings-main', array( 
+				'global-bar' => true, 
+				'wordmark' => true, 
+				'audience-menu' => true 
+			) );
 		}
 		$this->options = $options;
 		return;
@@ -255,24 +269,51 @@ class UMW_Online_Tools {
 	 * Perform any actions that need to happen in admin areas
 	 */
 	function admin_init() {
-	  /* This site is using the standard UMW theme, so no need to add options right now */
-	  if ( $this->is_main_umw_theme() ) {
-		  return;
-	  }
-	  
-	  register_setting( 'umw-toolbar-settings-section', 'umw-toolbar-settings', array( $this, 'sanitize_settings' ) );
-	  add_settings_section( 'umw-toolbar-settings-section', __( 'UMW Global Toolbar Settings' ), array( $this, 'settings_section' ) );
-	  add_settings_field( 'umw-enable-global-bar', __( 'Global Menu Bar' ), array( $this, 'settings_field_checkbox' ), 'options-general.php', 'umw-toolbar-settings-section', array( 'id' => 'umw-enable-global-bar', 'name' => 'global-bar', 'label' => __( 'Enable the global menu bar below the online tools bar?' ), 'note' => __( 'If this is disabled, none of the other options below will have any effect.' ) ) );
-	  add_settings_field( 'umw-enable-global-wordmark', __( 'Logo' ), array( $this, 'settings_field_checkbox' ), 'options-general.php', 'umw-toolbar-settings-section', array( 'id' => 'umw-enable-global-wordmark', 'name' => 'wordmark', 'label' => __( 'Enable the wordmark logo in the global menu bar?' ) ) );
-	  add_settings_field( 'umw-enable-global-search', __( 'Global Search' ), array( $this, 'settings_field_checkbox' ), 'options-general.php', 'umw-toolbar-settings-section', array( 'id' => 'umw-enable-global-search', 'name' => 'search', 'label' => __( 'Enable the global search area?' ) ) );
-	  add_settings_field( 'umw-enable-audience-menu', __( 'Audience Menu' ), array( $this, 'settings_field_checkbox' ), 'options-general.php', 'umw-toolbar-settings-section', array( 'id' => 'umw-enable-audience-menu', 'name' => 'audience-menu', 'label' => __( 'Enable global audience menu?' ) ) );
+		/* This site is using the standard UMW theme, so no need to add options right now */
+		if ( $this->is_main_umw_theme() ) {
+			return;
+		}
+		
+		register_setting( 'general', 'umw-toolbar-settings', array( $this, 'sanitize_settings' ) );
+		add_settings_section( 'umw-toolbar-settings-section', __( 'UMW Global Toolbar Settings' ), array( $this, 'settings_section' ), 'general' );
+		$cbfields = apply_filters( 'umw-global-toolbar-settings-checkbox-fields', array(
+			'global-bar'    => array( 
+				'id'    => 'umw-enable-global-bar', 
+				'title' => __( 'Global Menu Bar' ), 
+				'label' => __( 'Enable the global menu bar below the online tools bar?' ), 
+				'note'  => __( 'If this is disabled, none of the other options below will have any effect.' ), 
+			), 
+			'wordmark'      => array( 
+				'id'    => 'umw-enable-global-wordmark', 
+				'title' => __( 'Logo' ), 
+				'label' => __( 'Enable the wordmark logo in the global menu bar?' ), 
+			), 
+			'audience-menu' => array(
+				'id'    => 'umw-enable-audience-menu', 
+				'title' => __( 'Audience Menu' ), 
+				'label' => __( 'Enable the global audience menu?' ), 
+			), 
+		) );
+		
+		foreach ( $cbfields as $name=>$field ) {
+			$args = array(
+				'id'    => $field['id'], 
+				'name'  => $name, 
+				'label' => $field['label']
+			);
+			if ( array_key_exists( 'note', $field ) && ! empty( $field['note'] ) ) {
+				$args['note'] = $field['note'];
+			}
+			add_settings_field( $field['id'], $field['title'], array( $this, 'settings_field_checkbox' ), 'general', 'umw-toolbar-settings-section', $args );
+		}
 	}
 	
 	/**
 	 * Output anything that needs to go at the head of our settings area
 	 */
 	function settings_section() {
-	  return;
+		do_action( 'umw-online-tools-settings-section' );
+		return;
 	}
 	
 	/**
@@ -299,8 +340,16 @@ class UMW_Online_Tools {
 		$output = array();
 		$output['global-bar'] = isset( $input['global-bar'] );
 		$output['wordmark'] = isset( $input['wordmark'] );
-		$output['search'] = isset( $input['search'] );
 		$output['audience-menu'] = isset( $input['audience-menu'] );
+		$output = apply_filters( 'validate-umw-global-toolbar-settings', $output, $input );
 		return $output;
+	}
+	
+	/**
+	 * Add a class indicating that this site is not using the main UMW theme
+	 */
+	function non_main_body_class( $classes=array() ) {
+		$classes[] = 'custom-umw-theme';
+		return $classes;
 	}
 }
