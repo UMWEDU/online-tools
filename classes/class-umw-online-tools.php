@@ -8,14 +8,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class UMW_Online_Tools {
-  public $v = '0.2.45';
+  public $v = '0.3.1';
   public $icons = array();
+  public $options = array();
 
+  /**
+   * Instantiate our object
+   */
   function __construct() {
     add_action( 'after_setup_theme', array( $this, 'after_setup_theme' ) );
     add_action( 'init', array( $this, 'gather_icons' ) );
+	add_action( 'admin_init', array( $this, 'admin_init' ) );
   }
-
+  
+  /**
+   * Test whether this is the main UMW theme or not
+   */
+  function is_main_umw_theme() {
+	  return function_exists( 'umw_is_full_header' );
+  }
+  
+  /**
+   * Perform any actions that need to happen once the theme is initiated
+   * This is where we set up all of the various insertions that occur in the top of the theme
+   * @uses UMW_Online_Tools::is_main_umw_theme() to determine whether this site is using the main UMW theme
+   */
   function after_setup_theme() {
     if ( ! function_exists( 'genesis' ) ) {
       return false;
@@ -28,28 +45,34 @@ class UMW_Online_Tools {
     add_action( 'genesis_before', array( $this, 'do_toolbar' ), 1 );
 	add_action( 'genesis_before', array( $this, 'do_header_bar' ), 5 );
     add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
-	add_action( 'umw-main-header-bar', array( $this, 'do_test_menu' ), 11 );
+	add_action( 'umw-main-header-bar', array( $this, 'do_audience_menu' ), 11 );
 	
 	add_action( 'umw-main-header-bar', array( $this, 'do_wordmark' ), 5 );
 	if ( has_action( 'genesis_header', 'umw_do_global_header' ) ) {
 		remove_action( 'genesis_header', 'umw_do_global_header' );
 	}
 	
-	/*if ( function_exists( 'umw_is_full_header' ) && umw_is_full_header() ) {
-		remove_action( 'umw-main-header-bar', array( $this, 'do_wordmark' ), 5 );
-	}*/
+	$this->get_options();
 	
-	if ( ! function_exists( 'umw_is_full_header' ) ) {
+	if ( ! $this->is_main_umw_theme() && false === $this->options['global-bar'] ) {
 		remove_action( 'genesis_before', array( $this, 'do_header_bar' ), 5 );
 	}
   }
 
+  /**
+   * Setup any style sheets and extraneous CSS we need
+   */
   function enqueue_styles() {
     wp_enqueue_style( 'umw-online-tools', plugins_url( 'umw-online-tools.css', dirname( __FILE__ ) ), array(), $this->v, 'all' );
-	wp_add_inline_style( 'umw-online-tools', 'body > .umw-helpful-links { background: rgb( 77, 107, 139 ); color: #fff; } body > .umw-helpful-links a { color: #fff; }' );
+	#wp_add_inline_style( 'umw-online-tools', 'body > .umw-helpful-links { background: rgb( 77, 107, 139 ); color: #fff; } body > .umw-helpful-links a { color: #fff; }' );
 	add_action( 'wp_print_styles', array( $this, 'do_header_bar_styles' ) );
   }
 
+  /**
+   * Set up the array of icons that go in the toolbar
+   * @uses UMW_Online_Tools::$icons to store the array of icons
+   * @uses apply_filters() to apply the 'umw-online-tools-icons' filter to the array, allowing other plugins to modify the icon list
+   */
   function gather_icons() {
     $this->icons = apply_filters( 'umw-online-tools-icons', array(
       0 => array(
@@ -115,6 +138,9 @@ class UMW_Online_Tools {
     ) );
   }
 
+  /**
+   * Output the global toolbar
+   */
   function do_toolbar() {
     $output = '';
     $format = '<li><a href="%1$s"><img src="%2$s?v=%3$s" alt=""/>%4$s</a></li>';
@@ -129,6 +155,7 @@ class UMW_Online_Tools {
   
 	/**
 	 * Output the header bar
+	 * @todo remove the reliance on the umw_is_full_header() function
 	 */
 	function do_header_bar() {
 		if ( ! has_action( 'umw-main-header-bar' ) )
@@ -148,10 +175,17 @@ class UMW_Online_Tools {
 </aside>';
 	}
 	
+	/**
+	 * Output any additional styles that need to be applied by other plugins
+	 * @uses do_action() to initiate the 'umw-main-header-bar-styles' action, allowing other plugins to hook into this
+	 */
 	function do_header_bar_styles() {
 		do_action( 'umw-main-header-bar-styles' );
 	}
 	
+	/**
+	 * Output the wordmark logo in the global toolbar
+	 */
 	function do_wordmark() {
 		$logo = get_mnetwork_transient( 'umw-global-logo', false );
 		if ( false === $logo ) {
@@ -164,7 +198,10 @@ class UMW_Online_Tools {
 <?php
 	}
 	
-	function do_test_menu() {
+	/**
+	 * Output the audience menu
+	 */
+	function do_audience_menu() {
 		$h = gethostname();
 		if ( stristr( $h, '.wtf' ) || stristr( $h, 'testumw.local' ) ) {
 			$host = 'http://%2$s.umw.wtf%1$s';
@@ -173,13 +210,97 @@ class UMW_Online_Tools {
 		} else {
 			$host = 'http://%2$s.umw.edu%1$s';
 		}
+		
+		$menu_items = apply_filters( 'umw-global-audience-menu-items', array(
+			'faculty' => array(
+				'url'   => sprintf( $host, '/in/', 'www' ), 
+				'label' => __( 'Faculty &amp; Staff' )
+			), 
+			'alumni' => array(
+				'url'   => sprintf( $host, '/', 'alumni' ), 
+				'label' => __( 'Alumni' ), 
+			), 
+			'give'   => array(
+				'url'   => sprintf( $host, '/mwfirst/', 'giving' ), 
+				'label' => __( 'Give' ), 
+			), 
+		), $host );
 ?>
 <ul class="umw-audience-menu">
-	<li><a href="<?php printf( $host, '/in/', 'www' ) ?>">Faculty &amp; Staff</a></li>
-	<li><a href="<?php printf( $host, '/', 'alumni' ) ?>">Alumni</a></li>
-	<li><a href="<?php printf( $host, '/mwfirst/', 'giving' ) ?>">Give</a></li>
+<?php
+		foreach ( $menu_items as $item ) {
+?>
+	<li><a href="<?php echo $item['url'] ?>"><?php echo $item['label'] ?></a></li>
+<?php
+		}
+?>
 	<li style="width: 0; height: 0; line-height: 0; font-size: 0; margin: 0; padding: 0; overflow: hidden; float: none; clear: both; display: block;"></li>
 </ul>
 <?php
+	}
+	
+	/**
+	 * Retrieve any options associated with this plugin
+	 */
+	function get_options() {
+		$options = get_option( 'umw-toolbar-settings', array( 'global-bar' => false ) );
+		if ( $this->is_main_umw_theme() ) {
+			$options = array( 'global-bar' => true, 'wordmark' => true, 'search' => true, 'audience-menu' => true );
+		}
+		$this->options = $options;
+		return;
+	}
+	
+	/**
+	 * Perform any actions that need to happen in admin areas
+	 */
+	function admin_init() {
+	  /* This site is using the standard UMW theme, so no need to add options right now */
+	  if ( $this->is_main_umw_theme() ) {
+		  return;
+	  }
+	  
+	  register_setting( 'umw-toolbar-settings-section', 'umw-toolbar-settings', array( $this, 'sanitize_settings' ) );
+	  add_settings_section( 'umw-toolbar-settings-section', __( 'UMW Global Toolbar Settings' ), array( $this, 'settings_section' ) );
+	  add_settings_field( 'umw-enable-global-bar', __( 'Global Menu Bar' ), array( $this, 'settings_field_checkbox' ), 'options-general.php', 'umw-toolbar-settings-section', array( 'id' => 'umw-enable-global-bar', 'name' => 'global-bar', 'label' => __( 'Enable the global menu bar below the online tools bar?' ), 'note' => __( 'If this is disabled, none of the other options below will have any effect.' ) ) );
+	  add_settings_field( 'umw-enable-global-wordmark', __( 'Logo' ), array( $this, 'settings_field_checkbox' ), 'options-general.php', 'umw-toolbar-settings-section', array( 'id' => 'umw-enable-global-wordmark', 'name' => 'wordmark', 'label' => __( 'Enable the wordmark logo in the global menu bar?' ) ) );
+	  add_settings_field( 'umw-enable-global-search', __( 'Global Search' ), array( $this, 'settings_field_checkbox' ), 'options-general.php', 'umw-toolbar-settings-section', array( 'id' => 'umw-enable-global-search', 'name' => 'search', 'label' => __( 'Enable the global search area?' ) ) );
+	  add_settings_field( 'umw-enable-audience-menu', __( 'Audience Menu' ), array( $this, 'settings_field_checkbox' ), 'options-general.php', 'umw-toolbar-settings-section', array( 'id' => 'umw-enable-audience-menu', 'name' => 'audience-menu', 'label' => __( 'Enable global audience menu?' ) ) );
+	}
+	
+	/**
+	 * Output anything that needs to go at the head of our settings area
+	 */
+	function settings_section() {
+	  return;
+	}
+	
+	/**
+	 * Output a settings checkbox
+	 * @param array $args an array containing the field ID, the label and possibly a note to be displayed below the checkbox
+	 */
+	function settings_field_checkbox( $args=array() ) {
+		$vals = get_option( 'umw-toolbar-settings', array( $args['name'] => false ) );
+?>
+<p><input type="checkbox" name="umw-toolbar-settings[<?php echo $args['name'] ?>]" id="<?php echo $args['id'] ?>" value="1"<?php checked( $vals[$args['name']] ) ?>/>
+	<label for="<?php echo $args['id'] ?>"><?php echo $args['label'] ?></label></p>
+<?php
+		if ( array_key_exists( 'note', $args ) ) {
+?>
+<p><em><?php echo $args['note'] ?></em></p>
+<?php
+		}
+	}
+
+	/**
+	 * Sanitize our settings before they're added to the database
+	 */
+	function sanitize_settings( $input=array() ) {
+		$output = array();
+		$output['global-bar'] = isset( $input['global-bar'] );
+		$output['wordmark'] = isset( $input['wordmark'] );
+		$output['search'] = isset( $input['search'] );
+		$output['audience-menu'] = isset( $input['audience-menu'] );
+		return $output;
 	}
 }

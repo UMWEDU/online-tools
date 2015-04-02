@@ -26,5 +26,10 @@ Yes, the list of icons can be filtered using the `umw-online-tools-icons` filter
 
 == Changelog ==
 
+= 0.3 =
+* Add admin options to enable the global bar on sites not using the main UMW theme
+* Rename poorly-named function
+* Set up new function to test for main UMW theme, rather than relying on a test in each individual area
+
 = 0.2 =
 * This is the first version of this as a standalone plugin
