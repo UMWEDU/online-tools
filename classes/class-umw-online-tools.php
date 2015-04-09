@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class UMW_Online_Tools {
-  public $v = '0.3.7';
+  public $v = '0.3.8';
   public $icons = array();
   public $options = array();
 
@@ -61,6 +61,8 @@ class UMW_Online_Tools {
 			remove_action( 'genesis_before', array( $this, 'do_header_bar' ), 5 );
 		}
 	}
+	
+	remove_all_actions( 'umw_footer_nav' );
   }
 
   /**
