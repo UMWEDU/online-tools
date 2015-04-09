@@ -17,6 +17,7 @@
 	color: #fff;
 	position: relative;
 	z-index: 15;
+	line-height: 15;
 }
 
 .umw-helpful-links .umw-tools {
