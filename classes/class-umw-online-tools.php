@@ -196,11 +196,20 @@ class UMW_Online_Tools {
 		if ( false === $this->options['global-bar'] || false === $this->options['wordmark'] )
 			return;
 		
-		$logo = get_mnetwork_transient( 'umw-global-logo', false );
+		if ( function_exists( 'get_mnetwork_transient' ) ) {
+			$logo = get_mnetwork_transient( 'umw-global-logo', false );
+		} else {
+			$logo = get_site_transient( 'umw-global-logo', false );
+		}
+		
 		if ( false === $logo ) {
 			/*$logo = get_bloginfo('stylesheet_directory') . '/images/logo_global.png';*/
 			$logo = str_replace( '<svg ', '<svg id="umw-global-logo-img" ', file_get_contents( get_stylesheet_directory() . '/images/umw-linear-wordmark-optimized.svg' ) );
-			set_mnetwork_transient( 'umw-global-logo', $logo, HOUR_IN_SECONDS );
+			if ( function_exists( 'set_mnetwork_transient' ) ) {
+				set_mnetwork_transient( 'umw-global-logo', $logo, HOUR_IN_SECONDS );
+			} else {
+				set_site_transient( 'umw-global-logo', $logo, HOUR_IN_SECONDS );
+			}
 		}
 ?>
 <a id="umw-global-logo" href="<?php echo get_site_url(1); ?>" title="Home"><?php echo $logo ?></a>
