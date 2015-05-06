@@ -128,7 +128,7 @@
 }
 
 .umw-header-bar #umw-global-logo svg, 
-.umw-header-bar #umw-global-logo-img {
+.umw-header-bar .umw-global-logo-img {
 	height: 19px;
 	width: 375px;
 	max-height: 100%;

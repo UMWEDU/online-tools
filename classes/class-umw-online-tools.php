@@ -204,7 +204,7 @@ class UMW_Online_Tools {
 		
 		if ( false === $logo ) {
 			/*$logo = get_bloginfo('stylesheet_directory') . '/images/logo_global.png';*/
-			$logo = str_replace( '<svg ', '<svg id="umw-global-logo-img" ', file_get_contents( get_stylesheet_directory() . '/images/umw-linear-wordmark-optimized.svg' ) );
+			$logo = str_replace( '</svg>', sprintf( '<image src="%1$s" alt="%2$s" xlink:href=""/></svg>', plugins_url( '/images/umw-wordmark.png', dirname( __FILE__ ) ), __( 'University of Mary Washington' ) ), file_get_contents( plugin_dir_path( dirname( __FILE__ ) ) . '/images/umw-wordmark.svg' ) );
 			if ( function_exists( 'set_mnetwork_transient' ) ) {
 				set_mnetwork_transient( 'umw-global-logo', $logo, HOUR_IN_SECONDS );
 			} else {
