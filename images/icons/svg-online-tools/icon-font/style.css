@@ -1,0 +1,93 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?hjuu8t');
+	src:url('fonts/icomoon.eot?#iefixhjuu8t') format('embedded-opentype'),
+		url('fonts/icomoon.woff?hjuu8t') format('woff'),
+		url('fonts/icomoon.ttf?hjuu8t') format('truetype'),
+		url('fonts/icomoon.svg?hjuu8t#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-umwicon-mytime:before {
+	content: "\e600";
+}
+
+.icon-umwicon-password:before {
+	content: "\e601";
+}
+
+.icon-umwicon-email:before {
+	content: "\e602";
+}
+
+.icon-umwicon-eva:before {
+	content: "\e603";
+}
+
+.icon-umwicon-library:before {
+	content: "\e604";
+}
+
+.icon-umwicon-links:before {
+	content: "\e605";
+}
+
+.icon-umwicon-documents:before {
+	content: "\e606";
+}
+
+.icon-umwicon-eagleeye:before {
+	content: "\e607";
+}
+
+.icon-umwicon-eaglenet:before {
+	content: "\e608";
+}
+
+.icon-umwicon-eagleone .path1:before {
+	content: "\e609";
+	color: rgb(0, 0, 0);
+}
+.icon-umwicon-eagleone .path2:before {
+	content: "\e60a";
+	margin-left: -12.2998046875em;
+	color: rgb(0, 0, 0);
+}
+.icon-umwicon-eagleone .path3:before {
+	content: "\e60b";
+	margin-left: -12.2998046875em;
+	color: rgb(255, 255, 255);
+}
+.icon-umwicon-eagleone .path4:before {
+	content: "\e60c";
+	margin-left: -12.2998046875em;
+	color: rgb(0, 0, 0);
+}
+
+.icon-umwicon-canvas:before {
+	content: "\e60d";
+}
+
+.icon-umwicon-directory:before {
+	content: "\e60e";
+}
+
+.icon-umwicon-banner:before {
+	content: "\e60f";
+}
+
