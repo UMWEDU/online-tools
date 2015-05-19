@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot?hjuu8t');
-	src:url('fonts/icomoon.eot?#iefixhjuu8t') format('embedded-opentype'),
-		url('fonts/icomoon.woff?hjuu8t') format('woff'),
-		url('fonts/icomoon.ttf?hjuu8t') format('truetype'),
-		url('fonts/icomoon.svg?hjuu8t#icomoon') format('svg');
+	src:url('fonts/icomoon.eot?-de2xh6');
+	src:url('fonts/icomoon.eot?#iefix-de2xh6') format('embedded-opentype'),
+		url('fonts/icomoon.woff?-de2xh6') format('woff'),
+		url('fonts/icomoon.ttf?-de2xh6') format('truetype'),
+		url('fonts/icomoon.svg?-de2xh6#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -21,6 +21,14 @@
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-starfish_Icon_648blue:before {
+	content: "\e610";
+}
+
+.icon-My_UMW_icon:before {
+	content: "\e611";
 }
 
 .icon-umwicon-mytime:before {
