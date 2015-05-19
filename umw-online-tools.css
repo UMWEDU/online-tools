@@ -275,3 +275,81 @@ br.desktop-clear {
 		clear: left;
 	}
 }
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	display: block;
+	line-height: 30px;
+	font-size: 26px;
+}
+
+.icon-umwicon-eagleone:before {
+	content: "\e600";
+	font-size: 18px;
+}
+
+.icon-umwicon-banner:before {
+	content: "\e601";
+	font-size: 30px;
+}
+
+.icon-umwicon-canvas:before {
+	content: "\e602";
+	font-size: 20px;
+}
+
+.icon-umwicon-directory:before {
+	content: "\e603";
+	font-size: 20px;
+}
+
+.icon-umwicon-documents:before {
+	content: "\e604";
+	font-size: 20px;
+}
+
+.icon-umwicon-eagleeye:before {
+	content: "\e605";
+}
+
+.icon-umwicon-eaglenet:before {
+	content: "\e606";
+	font-size: 64px;
+}
+
+.icon-umwicon-email:before {
+	content: "\e607";
+	font-size: 30px;
+}
+
+.icon-umwicon-eva:before {
+	content: "\e608";
+}
+
+.icon-umwicon-library:before {
+	content: "\e609";
+	font-size: 18px;
+}
+
+.icon-umwicon-links:before {
+	content: "\e60a";
+	font-size: 20px;
+}
+
+.icon-umwicon-mytime:before {
+	content: "\e60b";
+	font-size: 16px;
+}
+
+.icon-umwicon-myumw:before {
+	content: "\e60c";
+}
+
+.icon-umwicon-password:before {
+	content: "\e60d";
+	font-size: 20px;
+}
+
+.icon-umwicon-starfish:before {
+	content: "\e60e";
+	font-size: 20px;
+}
