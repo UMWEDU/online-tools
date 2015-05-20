@@ -1,15 +1,15 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot?-oh81jy');
-	src:url('fonts/icomoon.eot?#iefix-oh81jy') format('embedded-opentype'),
-		url('fonts/icomoon.woff?-oh81jy') format('woff'),
-		url('fonts/icomoon.ttf?-oh81jy') format('truetype'),
-		url('fonts/icomoon.svg?-oh81jy#icomoon') format('svg');
+	src:url('fonts/icomoon.eot?-mrtmte');
+	src:url('fonts/icomoon.eot?#iefix-mrtmte') format('embedded-opentype'),
+		url('fonts/icomoon.woff?-mrtmte') format('woff'),
+		url('fonts/icomoon.ttf?-mrtmte') format('truetype'),
+		url('fonts/icomoon.svg?-mrtmte#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
-[class^="icon-"]:before, [class*=" icon-"]:before {
+[class^="icon-"], [class*=" icon-"] {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -23,31 +23,31 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-umwicon-eagleone:before {
+.icon-umwicon-banner:before {
 	content: "\e600";
 }
 
-.icon-umwicon-banner:before {
+.icon-umwicon-canvas:before {
 	content: "\e601";
 }
 
-.icon-umwicon-canvas:before {
+.icon-umwicon-directory:before {
 	content: "\e602";
 }
 
-.icon-umwicon-directory:before {
+.icon-umwicon-documents:before {
 	content: "\e603";
 }
 
-.icon-umwicon-documents:before {
+.icon-umwicon-eagleeye:before {
 	content: "\e604";
 }
 
-.icon-umwicon-eagleeye:before {
+.icon-umwicon-eaglenet:before {
 	content: "\e605";
 }
 
-.icon-umwicon-eaglenet:before {
+.icon-umwicon-eagleone:before {
 	content: "\e606";
 }
 
