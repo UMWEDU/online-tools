@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class UMW_Online_Tools {
-  public $v = '0.3.14';
+  public $v = '0.3.15';
   public $icons = array();
   public $options = array();
 
@@ -81,12 +81,21 @@ class UMW_Online_Tools {
    * @uses apply_filters() to apply the 'umw-online-tools-icons' filter to the array, allowing other plugins to modify the icon list
    */
   function gather_icons() {
+		if ( time() < strtotime( '2015-06-01 00:00:00' ) ) {
+			$portal_icon = array(
+				'icon' => 'eaglenet',
+				'link' => 'https://eaglenet.umw.edu/',
+				'name' => 'EagleNet',
+			);
+		} else {
+			$portal_icon = array(
+				'icon' => 'myumw',
+				'link' => 'http://my.umw.edu/',
+				'name' => 'myUMW',
+			);
+		}
     $this->icons = apply_filters( 'umw-online-tools-icons', array(
-      0 => array(
-        'icon' => 'eaglenet',
-        'link' => 'https://eaglenet.umw.edu/',
-        'name' => 'EagleNet',
-      ),
+      0 => $portal_icon,
       1 => array(
         'icon' => 'banner',
         'link' => 'http://technology.umw.edu/hss/banner/',
