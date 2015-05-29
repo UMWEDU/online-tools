@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class UMW_Online_Tools {
-  public $v = '0.3.16';
+  public $v = '0.3.17';
   public $icons = array();
   public $options = array();
 
@@ -90,7 +90,7 @@ class UMW_Online_Tools {
 		} else {
 			$portal_icon = array(
 				'icon' => 'myumw',
-				'link' => 'http://my.umw.edu/',
+				'link' => 'https://orgsync.com/sso_redirect/university-of-mary-washington',
 				'name' => 'myUMW',
 			);
 		}
