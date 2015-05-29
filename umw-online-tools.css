@@ -279,7 +279,7 @@ br.desktop-clear {
 [class^="icon-"]:before, [class*=" icon-"]:before {
 	display: block;
 	line-height: 30px;
-	font-size: 20px;
+	font-size: 17px;
 }
 
 /*.icon-umwicon-eagleone:before {
