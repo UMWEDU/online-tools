@@ -1,6 +1,6 @@
 /**
  * Styles for the UMW Online Tool Bar and Global Header Bar
- * @version 0.3.22
+ * @version 0.4
  */
 .umw-helpful-links, 
 .umw-helpful-links * {
@@ -96,13 +96,27 @@
 	padding: 10px 0;
 }
 
-.umw-audience-menu a {
+.umw-header-bar .umw-audience-menu a {
 	color: #fff;
 	display: block;
 	padding: 0 10px;
 	margin: 0;
 	line-height: 25px;
 	border-right: 1px solid #fff;
+	text-decoration: none;
+	border-bottom: none;
+}
+
+.umw-header-bar .umw-audience-menu a:hover, 
+.umw-header-bar .umw-audience-menu a:focus {
+	color: #eee;
+	text-decoration: underline;
+	border-bottom: none;
+}
+
+.umw-header-bar .umw-audience-menu a:visited {
+	color: #fff;
+	border-bottom: none;
 }
 
 .umw-header-bar ul, 
@@ -130,8 +144,8 @@
 
 .umw-header-bar #umw-global-logo svg, 
 .umw-header-bar .umw-global-logo-img {
-	height: 19px;
-	width: 375px;
+	height: 17px;
+	width: 336px;
 	max-height: 100%;
 	max-width: 100%;
 }

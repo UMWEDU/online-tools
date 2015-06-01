@@ -1,6 +1,7 @@
 <?php
 /**
  * Implements the UMW Online Tools class
+ * @version 0.4
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -8,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class UMW_Online_Tools {
-  public $v = '0.3.22';
+  public $v = '0.4';
   public $icons = array();
   public $options = array();
 
@@ -81,21 +82,12 @@ class UMW_Online_Tools {
    * @uses apply_filters() to apply the 'umw-online-tools-icons' filter to the array, allowing other plugins to modify the icon list
    */
   function gather_icons() {
-		if ( time() < strtotime( '2015-06-01 08:00:00' ) ) {
-			$portal_icon = array(
-				'icon' => 'eaglenet',
-				'link' => 'https://eaglenet.umw.edu/',
-				'name' => 'EagleNet',
-			);
-		} else {
-			$portal_icon = array(
-				'icon' => 'myumw',
-				'link' => 'https://orgsync.com/sso_redirect/university-of-mary-washington',
-				'name' => 'myUMW',
-			);
-		}
     $this->icons = apply_filters( 'umw-online-tools-icons', array(
-      0 => $portal_icon,
+      0 => array(
+		'icon' => 'myumw',
+		'link' => 'https://orgsync.com/sso_redirect/university-of-mary-washington',
+		'name' => 'myUMW',
+	  ),
       1 => array(
         'icon' => 'banner',
         'link' => 'http://technology.umw.edu/hss/banner/',
@@ -246,6 +238,10 @@ class UMW_Online_Tools {
 			'faculty' => array(
 				'url'   => sprintf( $host, '/in/', 'www' ), 
 				'label' => __( 'Faculty &amp; Staff' )
+			), 
+			'students' => array(
+				'url' => sprintf( $host, '/students/', 'www' ), 
+				'label' => __( 'Students' )
 			), 
 			'alumni' => array(
 				'url'   => sprintf( $host, '/', 'alumni' ), 
