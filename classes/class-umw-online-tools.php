@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class UMW_Online_Tools {
-  public $v = '0.3.17';
+  public $v = '0.3.22';
   public $icons = array();
   public $options = array();
 
@@ -70,7 +70,7 @@ class UMW_Online_Tools {
    */
   function enqueue_styles() {
 	wp_register_style( 'umw-online-tools-font', plugins_url( '/images/icons/svg-online-tools/icon-font/style.css', dirname( __FILE__ ) ), array(), $this->v, 'all' );
-    wp_enqueue_style( 'umw-online-tools', plugins_url( 'umw-online-tools.css', dirname( __FILE__ ) ), array( 'umw-online-tools-font' ), $this->v, 'all' );
+    wp_enqueue_style( 'umw-online-tools', plugins_url( '/styles/umw-online-tools.css', dirname( __FILE__ ) ), array( 'umw-online-tools-font' ), $this->v, 'all' );
 	#wp_add_inline_style( 'umw-online-tools', 'body > .umw-helpful-links { background: rgb( 77, 107, 139 ); color: #fff; } body > .umw-helpful-links a { color: #fff; }' );
 	add_action( 'wp_print_styles', array( $this, 'do_header_bar_styles' ) );
   }
@@ -81,7 +81,7 @@ class UMW_Online_Tools {
    * @uses apply_filters() to apply the 'umw-online-tools-icons' filter to the array, allowing other plugins to modify the icon list
    */
   function gather_icons() {
-		if ( time() < strtotime( '2015-06-01 00:00:00' ) ) {
+		if ( time() < strtotime( '2015-06-01 08:00:00' ) ) {
 			$portal_icon = array(
 				'icon' => 'eaglenet',
 				'link' => 'https://eaglenet.umw.edu/',

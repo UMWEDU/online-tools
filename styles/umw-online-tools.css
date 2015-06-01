@@ -1,5 +1,6 @@
 /**
  * Styles for the UMW Online Tool Bar and Global Header Bar
+ * @version 0.3.22
  */
 .umw-helpful-links, 
 .umw-helpful-links * {
@@ -276,7 +277,14 @@ br.desktop-clear {
 	}
 }
 
+[class^="icon-"], [class*=" icon-"] {
+	font-family: MuseoSans500, MuseoSans, Arial, Helvetica, Tahoma, sans-serif;
+	font-weight: 500;
+}
+
 [class^="icon-"]:before, [class*=" icon-"]:before {
+	font-family: icomoon;
+	font-weight: 300;
 	display: block;
 	line-height: 30px;
 	font-size: 17px;
