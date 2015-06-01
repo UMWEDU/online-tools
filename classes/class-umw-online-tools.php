@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class UMW_Online_Tools {
-  public $v = '0.3.8';
+  public $v = '0.3.22';
   public $icons = array();
   public $options = array();
 
@@ -69,7 +69,8 @@ class UMW_Online_Tools {
    * Setup any style sheets and extraneous CSS we need
    */
   function enqueue_styles() {
-    wp_enqueue_style( 'umw-online-tools', plugins_url( 'umw-online-tools.css', dirname( __FILE__ ) ), array(), $this->v, 'all' );
+	wp_register_style( 'umw-online-tools-font', plugins_url( '/images/icons/svg-online-tools/icon-font/style.css', dirname( __FILE__ ) ), array(), $this->v, 'all' );
+    wp_enqueue_style( 'umw-online-tools', plugins_url( '/styles/umw-online-tools.css', dirname( __FILE__ ) ), array( 'umw-online-tools-font' ), $this->v, 'all' );
 	#wp_add_inline_style( 'umw-online-tools', 'body > .umw-helpful-links { background: rgb( 77, 107, 139 ); color: #fff; } body > .umw-helpful-links a { color: #fff; }' );
 	add_action( 'wp_print_styles', array( $this, 'do_header_bar_styles' ) );
   }
@@ -80,12 +81,21 @@ class UMW_Online_Tools {
    * @uses apply_filters() to apply the 'umw-online-tools-icons' filter to the array, allowing other plugins to modify the icon list
    */
   function gather_icons() {
+		if ( time() < strtotime( '2015-06-01 08:00:00' ) ) {
+			$portal_icon = array(
+				'icon' => 'eaglenet',
+				'link' => 'https://eaglenet.umw.edu/',
+				'name' => 'EagleNet',
+			);
+		} else {
+			$portal_icon = array(
+				'icon' => 'myumw',
+				'link' => 'https://orgsync.com/sso_redirect/university-of-mary-washington',
+				'name' => 'myUMW',
+			);
+		}
     $this->icons = apply_filters( 'umw-online-tools-icons', array(
-      0 => array(
-        'icon' => 'eaglenet',
-        'link' => 'https://eaglenet.umw.edu/',
-        'name' => 'EagleNet',
-      ),
+      0 => $portal_icon,
       1 => array(
         'icon' => 'banner',
         'link' => 'http://technology.umw.edu/hss/banner/',
@@ -149,12 +159,12 @@ class UMW_Online_Tools {
    */
   function do_toolbar() {
     $output = '';
-    $format = '<li><a href="%1$s"><img src="%2$s?v=%3$s" alt=""/>%4$s</a></li>';
+    $format = '<li><a href="%1$s" class="%5$s">%4$s</a></li>';
     foreach ( $this->icons as $i ) {
-      if ( ! stristr( '//', $i['icon'] ) ) {
+      /*if ( ! stristr( '//', $i['icon'] ) ) {
         $i['icon'] = plugins_url( sprintf( 'images/icons/svg-online-tools/24px-white/umwicon-%1$s.png', $i['icon'] ), dirname( __FILE__ ) );
-      }
-      $output .= sprintf( $format, esc_url( $i['link'] ), esc_url( $i['icon'] ), $this->v, $i['name'] );
+      }*/
+      $output .= sprintf( $format, esc_url( $i['link'] ), esc_url( $i['icon'] ), $this->v, $i['name'], 'icon-umwicon-' . $i['icon'] );
     }
     printf( '<aside class="umw-helpful-links"><ul class="umw-tools">%s</ul><br style="clear:both;"/></aside>', $output );
   }
@@ -204,7 +214,7 @@ class UMW_Online_Tools {
 		
 		if ( false === $logo ) {
 			/*$logo = get_bloginfo('stylesheet_directory') . '/images/logo_global.png';*/
-			$logo = str_replace( '<svg ', '<svg id="umw-global-logo-img" ', file_get_contents( get_stylesheet_directory() . '/images/umw-linear-wordmark-optimized.svg' ) );
+			$logo = str_replace( '</svg>', sprintf( '<image src="%1$s" alt="%2$s" xlink:href=""/></svg>', plugins_url( '/images/umw-wordmark.png', dirname( __FILE__ ) ), __( 'University of Mary Washington' ) ), file_get_contents( plugin_dir_path( dirname( __FILE__ ) ) . '/images/umw-wordmark.svg' ) );
 			if ( function_exists( 'set_mnetwork_transient' ) ) {
 				set_mnetwork_transient( 'umw-global-logo', $logo, HOUR_IN_SECONDS );
 			} else {

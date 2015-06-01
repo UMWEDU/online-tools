@@ -1,5 +1,6 @@
 /**
  * Styles for the UMW Online Tool Bar and Global Header Bar
+ * @version 0.3.22
  */
 .umw-helpful-links, 
 .umw-helpful-links * {
@@ -128,7 +129,7 @@
 }
 
 .umw-header-bar #umw-global-logo svg, 
-.umw-header-bar #umw-global-logo-img {
+.umw-header-bar .umw-global-logo-img {
 	height: 19px;
 	width: 375px;
 	max-height: 100%;
@@ -275,3 +276,74 @@ br.desktop-clear {
 		clear: left;
 	}
 }
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: MuseoSans500, MuseoSans, Arial, Helvetica, Tahoma, sans-serif;
+	font-weight: 500;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	font-family: icomoon;
+	font-weight: 300;
+	display: block;
+	line-height: 30px;
+	font-size: 17px;
+}
+
+/*.icon-umwicon-eagleone:before {
+	font-size: 18px;
+}
+
+.icon-umwicon-banner:before {
+	font-size: 30px;
+}
+
+.icon-umwicon-canvas:before {
+	font-size: 20px;
+}
+
+.icon-umwicon-directory:before {
+	font-size: 20px;
+}
+
+.icon-umwicon-documents:before {
+	font-size: 20px;
+}
+
+.icon-umwicon-eagleeye:before {
+}
+
+.icon-umwicon-eaglenet:before {
+	font-size: 64px;
+}
+
+.icon-umwicon-email:before {
+	font-size: 30px;
+}
+
+.icon-umwicon-eva:before {
+}
+
+.icon-umwicon-library:before {
+	font-size: 18px;
+}
+
+.icon-umwicon-links:before {
+	font-size: 20px;
+}
+
+.icon-umwicon-mytime:before {
+	font-size: 16px;
+}
+
+.icon-umwicon-myumw:before {
+}
+
+.icon-umwicon-password:before {
+	font-size: 20px;
+}
+
+.icon-umwicon-starfish:before {
+	font-size: 20px;
+}
+*/
