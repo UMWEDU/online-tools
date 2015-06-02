@@ -5,6 +5,7 @@
  * Version: 0.2
  * Author: cgrymala
  * License: GPL2
+ * GitHub Plugin URI: UMWEDU/online-tools.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

@@ -235,13 +235,13 @@ class UMW_Online_Tools {
 		}
 		
 		$menu_items = apply_filters( 'umw-global-audience-menu-items', array(
-			'faculty' => array(
-				'url'   => sprintf( $host, '/in/', 'www' ), 
-				'label' => __( 'Faculty &amp; Staff' )
-			), 
 			'students' => array(
 				'url' => sprintf( $host, '/students/', 'www' ), 
 				'label' => __( 'Students' )
+			), 
+			'faculty' => array(
+				'url'   => sprintf( $host, '/in/', 'www' ), 
+				'label' => __( 'Faculty &amp; Staff' )
 			), 
 			'alumni' => array(
 				'url'   => sprintf( $host, '/', 'alumni' ), 
