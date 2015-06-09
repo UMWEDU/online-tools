@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class UMW_Online_Tools {
-  public $v = '0.4.2';
+  public $v = '0.4.3';
   public $icons = array();
   public $options = array();
 

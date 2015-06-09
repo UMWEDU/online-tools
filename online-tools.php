@@ -2,7 +2,7 @@
 /**
  * Plugin Name: UMW Online Tools
  * Description: Implements the toolbar for Online Tools at the UMW website
- * Version: 0.4.2
+ * Version: 0.4.3
  * Author: cgrymala
  * License: GPL2
  */
