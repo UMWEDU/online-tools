@@ -7,7 +7,7 @@
 
 **Tested up to:** 4.1.1
 
-**Stable tag:** 0.4.3
+**Stable tag:** 0.4.4
 
 **License:** GPLv2 or later
 
