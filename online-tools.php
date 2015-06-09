@@ -2,10 +2,9 @@
 /**
  * Plugin Name: UMW Online Tools
  * Description: Implements the toolbar for Online Tools at the UMW website
- * Version: 0.4.1
+ * Version: 0.4.2
  * Author: cgrymala
  * License: GPL2
- * GitHub Plugin URI: UMWEDU/online-tools.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
