@@ -1,6 +1,6 @@
 /**
  * Styles for the UMW Online Tool Bar and Global Header Bar
- * @version 0.4.5.1
+ * @version 0.4.5.2
  */
 .umw-helpful-links, 
 .umw-helpful-links * {
@@ -41,7 +41,7 @@
 .umw-helpful-links .umw-tools a {
 	display: block;
 	margin: 0;
-	padding: 10px 0;
+	padding: 2px 0 10px;
 	width: 100%;
 	max-width: 100%;
 	height: auto;
