@@ -1,6 +1,6 @@
 /**
  * Styles for the UMW Online Tool Bar and Global Header Bar
- * @version 0.4.5
+ * @version 0.4.5.1
  */
 .umw-helpful-links, 
 .umw-helpful-links * {
@@ -35,7 +35,7 @@
 	padding: 0;
 	margin: 0;
 	width: 8.333333333333333%;
-	font-size: 10px;
+	font-size: 11px;
 }
 
 .umw-helpful-links .umw-tools a {
