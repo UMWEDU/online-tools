@@ -158,7 +158,7 @@ class UMW_Online_Tools {
       }*/
       $output .= sprintf( $format, esc_url( $i['link'] ), esc_url( $i['icon'] ), $this->v, $i['name'], 'icon-umwicon-' . $i['icon'] );
     }
-    printf( '<aside class="umw-helpful-links"><ul class="umw-tools">%s</ul><br style="clear:both;"/></aside>', $output );
+    printf( '<aside class="umw-helpful-links"><ul class="umw-tools" id="umw-online-tools">%s</ul><br style="clear:both;"/></aside>', $output );
   }
 
 	/**
