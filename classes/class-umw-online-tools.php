@@ -70,6 +70,7 @@ class UMW_Online_Tools {
    * Setup any style sheets and extraneous CSS we need
    */
   function enqueue_styles() {
+	  wp_enqueue_script( 'umw-online-tools', plugins_url( '/scripts/umw-online-tools.js', dirname( __FILE__ ) ), array( 'jquery' ), $this->v, true );
 	wp_register_style( 'umw-online-tools-font', plugins_url( '/images/icons/svg-online-tools/icon-font/style.css', dirname( __FILE__ ) ), array(), $this->v, 'all' );
     wp_enqueue_style( 'umw-online-tools', plugins_url( '/styles/umw-online-tools.css', dirname( __FILE__ ) ), array( 'umw-online-tools-font' ), $this->v, 'all' );
 	#wp_add_inline_style( 'umw-online-tools', 'body > .umw-helpful-links { background: rgb( 77, 107, 139 ); color: #fff; } body > .umw-helpful-links a { color: #fff; }' );
