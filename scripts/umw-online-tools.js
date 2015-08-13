@@ -17,7 +17,7 @@ jQuery( function() {
 				return;
 			}
 			jQuery( 'body' ).prepend( jQuery( '.umw-header-bar' ) ).prepend( jQuery( '.umw-helpful-links' ) );
-			jQuery( '.umw-audience-menu' ).appendTo( jQuery( '.umw-header-bar > .wrap' ) );
+			jQuery( '.umw-audience-menu' ).insertBefore( jQuery( '.umw-header-bar > .wrap .desktop-clear' ) );
 			jQuery( '.mega-menu-item-umw-online-tools' ).remove();
 			
 		}
