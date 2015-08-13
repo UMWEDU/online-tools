@@ -1,6 +1,6 @@
 /**
  * Styles for the UMW Online Tool Bar and Global Header Bar
- * @version 0.4.5.2
+ * @version 0.4.5.3
  */
 .umw-helpful-links, 
 .umw-helpful-links * {
@@ -209,7 +209,8 @@ br.desktop-clear {
 		font-size: 11px !important;
 	}
 	
-	.menu-bar-open .umw-helpful-links {
+	.menu-bar-open .umw-helpful-links, 
+	.mega-toggle-on .umw-helpful-links {
 		display: block;
 	}
 	
@@ -302,6 +303,7 @@ br.desktop-clear {
 	display: block;
 	line-height: 30px;
 	font-size: 14px;
+	margin: 0;
 }
 
 /*.icon-umwicon-eagleone:before {
@@ -587,4 +589,453 @@ br.mobile-clear {
 
 .mobile br.mobile-clear {
 	display: block;
+}
+
+/**
+ * Repeat the styles above with specificity for the Max Mega Menu
+ */
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-helpful-links,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-helpful-links * {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-helpful-links {
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  clear: both;
+  float: none;
+  background: #4d6b8b;
+  color: #fff;
+  position: relative;
+  z-index: 15;
+  line-height: 15px;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-helpful-links .umw-tools {
+  display: block;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-helpful-links .umw-tools > li {
+  display: inline-block;
+  float: left;
+  padding: 0;
+  margin: 0;
+  width: 8.333333333333333%;
+  font-size: 11px;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-helpful-links .umw-tools a {
+  display: block;
+  margin: 0;
+  padding: 2px 0 10px;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  color: #fff;
+  background: transparent;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-helpful-links .umw-tools a:hover,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-helpful-links .umw-tools a:focus {
+  background: #002b5a;
+  color: #fff;
+  border: none;
+  text-decoration: none;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-helpful-links .umw-tools img {
+  display: block;
+  margin: 0 auto;
+  padding: 4px;
+  max-width: 100%;
+  width: auto;
+  height: 26px;
+  /* No longer necessary, since we modified the images themselves
+  filter: invert(100%) contrast(1000%);
+  -webkit-filter: invert(100%) contrast(1000%);
+  -moz-filter: invert(100%) contrast(1000%);
+  -o-filter: invert(100%) contrast(1000%);
+  -ms-filter: invert(100%) contrast(1000%);*/
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar > .wrap > *,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar ul {
+  margin: 0;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-audience-menu {
+  display: block;
+  float: right;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-audience-menu li {
+  display: inline-block;
+  float: left;
+  width: auto;
+  font-size: 11px;
+  padding: 10px 0;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar .umw-audience-menu a {
+  color: #fff;
+  display: block;
+  padding: 0 10px;
+  margin: 0;
+  line-height: 25px;
+  border-right: 1px solid #fff;
+  text-decoration: none;
+  border-bottom: none;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar .umw-audience-menu a:hover,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar .umw-audience-menu a:focus {
+  color: #eee;
+  text-decoration: underline;
+  border-bottom: none;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar .umw-audience-menu a:visited {
+  color: #fff;
+  border-bottom: none;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar ul,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar ul > li,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar ol,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar ol > li {
+  list-style: none;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar #umw-global-logo {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 13px 0 13px;
+  margin: 0;
+  float: left;
+  display: none;
+  height: 45px;
+  vertical-align: middle;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar.no-global-header #umw-global-logo,
+#mega-menu-wrap-header-right #mega-menu-header-right .custom-umw-theme .umw-header-bar #umw-global-logo {
+  display: block;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar #umw-global-logo svg,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar .umw-global-logo-img {
+  height: 17px;
+  width: 336px;
+  max-height: 100%;
+  max-width: 100%;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar #umw-global-logo svg .style0 {
+  fill: #ffffff;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .artsGenesis #header {
+  position: relative;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .jamesmonroemuseum, #mega-menu-wrap-header-right #mega-menu-header-right .philharmonic {
+  background: #000;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right body #umw-logo-block {
+  padding-top: 0;
+  padding-bottom: 10px;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right br.desktop-clear {
+  clear: both;
+}
+@media all and (max-width: 1023px) {
+  #mega-menu-wrap-header-right #mega-menu-header-right body #umw-custom-background #header > .wrap {
+    margin: 0;
+    padding: 0;
+  }
+  #mega-menu-wrap-header-right #mega-menu-header-right #umw-logo-block {
+    display: none;
+  }
+  #mega-menu-wrap-header-right #mega-menu-header-right #inner {
+    padding-top: 0;
+    margin-top: 0;
+  }
+  #mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar #umw-global-logo,
+  #mega-menu-wrap-header-right #mega-menu-header-right #umw-global-logo {
+    display: block;
+  }
+  #mega-menu-wrap-header-right #mega-menu-header-right .umw-helpful-links .umw-tools a {
+    color: #fff !important;
+    background: transparent !important;
+    padding: 10px 0 !important;
+  }
+  #mega-menu-wrap-header-right #mega-menu-header-right .umw-helpful-links .umw-tools a:hover,
+  #mega-menu-wrap-header-right #mega-menu-header-right .umw-helpful-links .umw-tools a:focus {
+    background: #002b5a !important;
+    color: #fff !important;
+  }
+  #mega-menu-wrap-header-right #mega-menu-header-right .umw-helpful-links {
+    display: none;
+    background: #4d6b8b !important;
+    font-size: 11px !important;
+  }
+  #mega-menu-wrap-header-right #mega-menu-header-right .menu-bar-open .umw-helpful-links,
+  #mega-menu-wrap-header-right #mega-menu-header-right .mega-toggle-on .umw-helpful-links {
+    display: block;
+  }
+  #mega-menu-wrap-header-right #mega-menu-header-right .umw-helpful-links .umw-tools li,
+  #mega-menu-wrap-header-right #mega-menu-header-right #umw-nav .umw-helpful-links .umw-tools li {
+    width: 16.66666666666667%;
+  }
+  #mega-menu-wrap-header-right #mega-menu-header-right .umw-helpful-links .umw-tools li:nth-child(6n) {
+    clear: right;
+  }
+  #mega-menu-wrap-header-right #mega-menu-header-right .umw-helpful-links .umw-tools li:nth-child(6n + 1) {
+    clear: left;
+  }
+  #mega-menu-wrap-header-right #mega-menu-header-right br.desktop-clear {
+    display: none;
+  }
+}
+@media all and (max-width: 750px) {
+  #mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar {
+    height: auto;
+  }
+  #mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar #umw-global-logo,
+  #mega-menu-wrap-header-right #mega-menu-header-right .umw-audience-menu {
+    float: none;
+    clear: both;
+    margin: 0 auto;
+    width: auto;
+    text-align: center;
+    background: #00305e;
+  }
+  #mega-menu-wrap-header-right #mega-menu-header-right .umw-audience-menu li {
+    width: 25%;
+  }
+  #mega-menu-wrap-header-right #mega-menu-header-right .umw-audience-menu li:nth-child(4n) a {
+    border: none;
+  }
+}
+@media all and (max-width: 480px) {
+  #mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar #umw-global-logo {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  #mega-menu-wrap-header-right #mega-menu-header-right .umw-audience-menu li {
+    width: 50%;
+  }
+  #mega-menu-wrap-header-right #mega-menu-header-right .umw-audience-menu li a {
+	  text-align: center;
+  }
+  #mega-menu-wrap-header-right #mega-menu-header-right .umw-audience-menu li:nth-child(even) a {
+    border: none;
+  }
+  #mega-menu-wrap-header-right #mega-menu-header-right .umw-helpful-links .umw-tools li,
+  #mega-menu-wrap-header-right #mega-menu-header-right #umw-nav .umw-helpful-links .umw-tools li {
+    width: 25%;
+  }
+  #mega-menu-wrap-header-right #mega-menu-header-right .umw-helpful-links .umw-tools li:nth-child(6n) {
+    clear: none;
+  }
+  #mega-menu-wrap-header-right #mega-menu-header-right .umw-helpful-links .umw-tools li:nth-child(6n + 1) {
+    clear: none;
+  }
+  #mega-menu-wrap-header-right #mega-menu-header-right .umw-helpful-links .umw-tools li:nth-child(4n) {
+    clear: right;
+  }
+  #mega-menu-wrap-header-right #mega-menu-header-right .umw-helpful-links .umw-tools li:nth-child(4n + 1) {
+    clear: left;
+  }
+}
+#mega-menu-wrap-header-right #mega-menu-header-right li.mega-menu-item [class^="icon-"], #mega-menu-wrap-header-right #mega-menu-header-right li.mega-menu-item [class*=" icon-"] {
+  font-family: MuseoSans500, MuseoSans, Arial, Helvetica, Tahoma, sans-serif;
+  font-weight: 500;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right li.mega-menu-item [class^="icon-"]:before, #mega-menu-wrap-header-right #mega-menu-header-right li.mega-menu-item [class*=" icon-"]:before {
+  font-family: icomoon;
+  font-weight: 300;
+  display: block;
+  line-height: 30px;
+  font-size: 14px;
+  margin: 0;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right aside.umw-header-bar {
+  position: relative;
+  z-index: 250;
+  width: 100%;
+  background: #00305e;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar > .wrap {
+  background: none;
+  width: 100%;
+  max-width: 960px;
+  overflow: visible;
+  min-height: 42px;
+  clear: both;
+  margin: 0 auto;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar .umw-audience-menu {
+  margin: 0;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right #umw-custom-background {
+  clear: both;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-search-container {
+  float: right;
+  width: 250px;
+  background: transparent;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-search-container-wrapper {
+  margin: 0;
+  padding: 0;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-search-container::after,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar > .wrap::after,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-search-box::after,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar::after,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-search-choices::after,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-search-choices li::after {
+  content: "";
+  clear: both;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-search-container ul,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-search-container ul > li,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-search-container ol,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-search-container ol > li {
+  list-style: none;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right li.umw-search-container {
+  position: relative;
+  padding: 10px 20px;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right ul.umw-search-choices,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar ul.umw-search-choices {
+  margin: 0;
+  padding: 0;
+  margin-top: 47px;
+  position: absolute;
+  top: 0;
+  left: -99999px;
+  width: 100%;
+  box-sizing: border-box;
+  background: #00305e;
+  border-bottom: 1px solid #fff;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right ul.umw-search-choices li {
+  padding: 16px;
+  border: 1px solid #fff;
+  border-bottom: none;
+  color: #fff;
+  font-size: 12px;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right ul.umw-search-choices li input {
+  margin-right: 12px;
+  background: none;
+  border: none;
+  vertical-align: middle;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right ul.umw-search-choices.show {
+  left: 0;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-search-container .gsc-input {
+  width: 76%;
+  padding: 4px;
+  font-size: 11px;
+  line-height: 15px;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border: 1px solid #333;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar .umw-search-container .searchsubmit {
+  font-size: 11px;
+  line-height: 15px;
+  padding: 4px;
+  width: 20%;
+  float: right;
+  border: 1px solid #666;
+  background: #333333;
+  color: #fff;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar .umw-search-container .searchsubmit:hover {
+  background: #000;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar .umw-search-wrapper {
+  float: right;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right * + html .umw-search-container .gsc-input {
+  float: left;
+  background: #fff !important;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right * + html .umw-search-container .searchsubmit {
+  float: right;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right * + html .umw-header-bar .umw-search-wrapper {
+  float: right;
+  width: 250px;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right * + html .umw-header-bar .umw-search-choices.show,
+#mega-menu-wrap-header-right #mega-menu-header-right * + html .umw-header-bar .umw-search-choices {
+  display: none;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-search-container-wrapper li:hover,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-search-container-wrapper li:focus,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-search-container-wrapper li.sfHover {
+  position: relative;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right #umw-nav li ul.umw-search-choices.mobile,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-search-container-wrapper li:hover ul.umw-search-choices.show.mobile,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-search-container-wrapper li:focus ul.umw-search-choices.show.mobile,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-search-container-wrapper li.sfHover ul.umw-search-choices.show.mobile,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-search-container-wrapper ul.umw-search-choices.show.mobile,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-search-container-wrapper ul.umw-search-choices.show.mobile li,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-search-container-wrapper ul.umw-search-choices.show.mobile li:hover,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-search-container-wrapper ul.umw-search-choices.show.mobile li:focus,
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-search-container-wrapper ul.umw-search-choices.show.mobile li.sfHover {
+  position: static;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .mobile .umw-search-container-wrapper {
+  background: #00305e;
+  color: #fff;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .mobile .umw-search-container-wrapper li,
+#mega-menu-wrap-header-right #mega-menu-header-right .mobile .umw-search-container-wrapper li li,
+#mega-menu-wrap-header-right #mega-menu-header-right #umw-nav .mobile .umw-search-container-wrapper li li {
+  color: #fff;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .mobile .umw-search-container {
+  width: 100%;
+  float: none;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .mobile .umw-search-choices.mobile,
+#mega-menu-wrap-header-right #mega-menu-header-right #umw-nav li ul.umw-search-choices.mobile,
+#mega-menu-wrap-header-right #mega-menu-header-right #header #subnav li ul.umw-search-choices.mobile {
+  background: none;
+  border: none;
+  width: 50%;
+  min-width: 260px;
+  float: left;
+  box-sizing: border-box;
+  margin-top: 0;
+  position: static;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .mobile .umw-search-choices.mobile li {
+  border: none;
+  background: none;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .mobile .umw-search-container > div {
+  width: 50%;
+  min-width: 260px;
+  float: left;
+  box-sizing: border-box;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .mobile .umw-search-container > div input {
+  padding: 8px 16px;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right br.mobile-clear {
+  clear: both;
+  display: none;
+}
+#mega-menu-wrap-header-right #mega-menu-header-right .mobile br.mobile-clear {
+  display: block;
 }
