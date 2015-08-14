@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class UMW_Online_Tools {
-  public $v = '0.4.5.3';
+  public $v = '0.4.5.4';
   public $icons = array();
   public $options = array();
 
@@ -111,7 +111,7 @@ class UMW_Online_Tools {
       ),
       5 => array(
         'icon' => 'eagleone',
-        'link' => '//eagleone-sp.blackboard.com/eaccounts',
+        'link' => 'https://eagleone-sp.blackboard.com/eaccounts',
         'name' => 'EagleOne',
       ),
       6 => array(
