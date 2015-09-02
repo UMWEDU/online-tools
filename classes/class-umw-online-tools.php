@@ -43,7 +43,7 @@ class UMW_Online_Tools {
       remove_action( 'genesis_before_header', 'umw_do_help_section' );
     }
 
-    add_action( 'genesis_before', array( $this, 'do_toolbar' ), 1 );
+    add_action( 'genesis_before', array( $this, 'do_toolbar' ), 2 );
 	add_action( 'genesis_before', array( $this, 'do_header_bar' ), 5 );
     add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 	add_action( 'umw-main-header-bar', array( $this, 'do_audience_menu' ), 11 );
