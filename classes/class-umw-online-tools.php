@@ -1,7 +1,7 @@
 <?php
 /**
  * Implements the UMW Online Tools class
- * @version 0.4.5.6
+ * @version 0.5
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class UMW_Online_Tools {
-  public $v = '0.4.5.6';
+  public $v = '0.5';
   public $icons = array();
   public $options = array();
 

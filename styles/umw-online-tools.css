@@ -1,6 +1,6 @@
 /**
  * Styles for the UMW Online Tool Bar and Global Header Bar
- * @version 0.4.5.6
+ * @version 0.5
  */
 .umw-helpful-links, 
 .umw-helpful-links * {
@@ -589,6 +589,28 @@ br.mobile-clear {
 
 .mobile br.mobile-clear {
 	display: block;
+}
+
+body fieldset.umw-search-choices-fieldset {
+	display: block; 
+	margin: 0; 
+	padding: 0; 
+	border: none; 
+	width: 100%; 
+	height: 0;
+}
+
+body fieldset.umw-search-choices-fieldset > legend {
+	display: inline-block; 
+	width: 0; 
+	height: 0; 
+	font-size: 0; 
+	line-height: 0; 
+	text-indent: -9999em; 
+	overflow: hidden; 
+	margin: 0; 
+	padding: 0; 
+	border: none;
 }
 
 /**
