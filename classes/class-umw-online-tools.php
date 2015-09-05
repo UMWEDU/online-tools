@@ -1,7 +1,7 @@
 <?php
 /**
  * Implements the UMW Online Tools class
- * @version 0.5
+ * @version 0.5.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class UMW_Online_Tools {
-  public $v = '0.5';
+  public $v = '0.5.1';
   public $icons = array();
   public $options = array();
 
@@ -21,6 +21,32 @@ class UMW_Online_Tools {
     add_action( 'init', array( $this, 'gather_icons' ) );
 	add_action( 'admin_init', array( $this, 'admin_init' ) );
   }
+  
+	/**
+	* Retrieve and return the root URL
+	* @param int $id the site ID to retrieve if UMW_IS_ROOT is not defined
+	* @param bool $echo whether to echo the URL or not
+	* @return string the URL
+	*/
+	function get_site_url( $id=1, $echo=false ) {
+		if ( defined( 'UMW_IS_ROOT' ) ) {
+			if ( is_numeric( UMW_IS_ROOT ) ) {
+				$url = get_site_url( UMW_IS_ROOT );
+			} else {
+				$url = UMW_IS_ROOT;
+			}
+		} else {
+			$url = get_site_url( $id );
+		}
+		
+		$url = str_replace( array( 'http://', 'https://' ), array( '//', '//' ), esc_url( $url ) );
+		
+		if ( $echo ) {
+			echo $url;
+		}
+		
+		return $url;
+	}
 
   /**
    * Test whether this is the main UMW theme or not
@@ -215,7 +241,7 @@ class UMW_Online_Tools {
 			}
 		}
 ?>
-<a id="umw-global-logo" href="<?php echo get_site_url(1); ?>" title="Home"><?php echo $logo ?></a>
+<a id="umw-global-logo" href="<?php $this->get_site_url( 1, true ); ?>" title="Home"><?php echo $logo ?></a>
 <?php
 	}
 

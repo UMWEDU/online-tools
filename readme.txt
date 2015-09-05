@@ -2,8 +2,8 @@
 Contributors: cgrymala
 Donate link: http://giving.umw.edu/
 Requires at least: 3.9.1
-Tested up to: 4.1.1
-Stable tag: 0.4.4
+Tested up to: 4.3
+Stable tag: 0.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,16 @@ Once activated, this plugin will automatically insert the Online Tools toolbar a
 Yes, the list of icons can be filtered using the `umw-online-tools-icons` filter.
 
 == Changelog ==
+
+= 0.5.1 =
+* Fix link on wordmark so it leads to new site instead of old site
+
+= 0.5 =
+* Initial version released after launch
+
+= 0.4 =
+* Modify audience menu
+* Other fixes & tweaks
 
 = 0.3 =
 * Add admin options to enable the global bar on sites not using the main UMW theme
