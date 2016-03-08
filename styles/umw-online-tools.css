@@ -167,6 +167,11 @@ body #umw-logo-block {
 	padding-bottom: 10px;
 }
 
+#mega-menu-wrap-header-right #mega-menu-header-right a.tools-search-toggle {
+	color: #e2e2e2;
+	font-weight: 700;
+}
+
 br.desktop-clear {
 	clear: both;
 }
@@ -204,7 +209,6 @@ br.desktop-clear {
 	}
 	
 	.umw-helpful-links {
-		display: none;
 		background: #4d6b8b !important;
 		font-size: 11px !important;
 	}
@@ -253,6 +257,24 @@ br.desktop-clear {
 	
 	.umw-audience-menu li:nth-child( 4n ) a {
 		border: none;
+	}
+}
+
+@media all and (max-width: 600px) {
+	.umw-helpful-links {
+		display: none;
+	}
+	
+	#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar .umw-search-wrapper, 
+	#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar .umw-search-wrapper .umw-search-container {
+		float: none;
+		clear: both;
+		width: 100%;
+	}
+	
+	#mega-menu-wrap-header-right #mega-menu-header-right .umw-audience-menu li, 
+	#mega-menu-wrap-header-right #mega-menu-header-right .umw-audience-menu li a {
+		text-align: center;
 	}
 }
 
