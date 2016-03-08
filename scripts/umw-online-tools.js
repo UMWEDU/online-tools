@@ -1,4 +1,11 @@
 jQuery( function() {
+	/**
+	 * We need to short-circuit this whole thing if we're running the old UMW theme
+	 */
+	if ( document.querySelectorAll( '#umw-custom-background' ).length >= 1 ) {
+		return;
+	}
+	
 	jQuery( window ).on( 'resize', function() {
 		return do_umw_online_tools_resize();
 	} );
