@@ -142,7 +142,7 @@ class UMW_Online_Tools {
       ),
       6 => array(
         'icon' => 'mytime',
-        'link' => '//umw.kronos.net/wfc/navigator/logon',
+        'link' => 'https://www.umw.edu/mytime/',
         'name' => 'MyTime',
       ),
       7 => array(
@@ -171,6 +171,10 @@ class UMW_Online_Tools {
         'name' => 'Helpful Links',
       ),
     ) );
+	
+	if ( time() >= strtotime( 'June 3, 2016 18:30 EDT' ) && time() <= strtotime( 'June 5, 2016 08:00 EDT' ) ) {
+		$this->icons[6]['link'] = 'http://technology.umw.edu/helpdesk/advisory/mytime-downtime-friday-evening-through-monday-morning/';
+	}
   }
 
   /**
