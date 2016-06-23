@@ -277,11 +277,11 @@ class UMW_Online_Tools {
 				'label' => __( 'Faculty &amp; Staff' )
 			),
 			'alumni' => array(
-				'url'   => sprintf( $host, '/', 'alumni' ),
+				'url'   => sprintf( $host, '/alumni/', 'www' ),
 				'label' => __( 'Alumni' ),
 			),
 			'give'   => array(
-				'url'   => sprintf( $host, '/mwfirst/', 'giving' ),
+				'url'   => sprintf( $host, '/give/', 'www' ),
 				'label' => __( 'Give' ),
 			),
 		), $host );
