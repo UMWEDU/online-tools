@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class UMW_Online_Tools {
-  public $v = '0.5.2.2';
+  public $v = '0.5.2.3';
   public $icons = array();
   public $options = array();
 
@@ -112,69 +112,65 @@ class UMW_Online_Tools {
     $this->icons = apply_filters( 'umw-online-tools-icons', array(
       0 => array(
 		'icon' => 'myumw',
-		'link' => '//orgsync.com/sso_redirect/university-of-mary-washington',
+		'link' => '//umw.edu/myumw', // PrettyLink
 		'name' => 'myUMW',
 	  ),
       1 => array(
         'icon' => 'banner',
-        'link' => '//technology.umw.edu/hss/banner/',
+        'link' => '//umw.edu/banner', // PrettyLink
         'name' => 'Banner',
       ),
       2 => array(
         'icon' => 'canvas',
-        'link' => '//canvas.umw.edu/',
+        'link' => '//umw.edu/canvas', // PrettyLink
         'name' => 'Canvas',
       ),
       3 => array(
         'icon' => 'email',
-        'link' => '//webmail.umw.edu/',
+        'link' => '//umw.edu/email', // PrettyLink
         'name' => 'Email',
       ),
       4 => array(
         'icon' => 'library',
-        'link' => '//libraries.umw.edu/',
+        'link' => '//umw.edu/library', // Custom redirect?
         'name' => 'Library',
       ),
       5 => array(
         'icon' => 'eagleone',
-        'link' => 'https://eagleone-sp.blackboard.com/eaccounts',
+        'link' => '//umw.edu/eagleone', // PrettyLink
         'name' => 'EagleOne',
       ),
       6 => array(
         'icon' => 'mytime',
-        'link' => 'https://www.umw.edu/mytime/',
+        'link' => '//www.umw.edu/mytime/', // Redirected page
         'name' => 'MyTime',
       ),
       7 => array(
         'icon' => 'eagleeye',
-        'link' => '//eagleeye.umw.edu/',
+        'link' => '//umw.edu/eagleeye', // PrettyLink
         'name' => 'EagleEye',
       ),
       8 => array(
         'icon' => 'password',
-        'link' => '//password.umw.edu/',
+        'link' => '//umw.edu/password', // PrettyLink
         'name' => 'Passwords',
       ),
       9 => array(
         'icon' => 'directory',
-        'link' => '//umw.edu/directory',
+        'link' => '//umw.edu/directory', // Standard link
         'name' => 'Directory',
       ),
       10 => array(
         'icon' => 'starfish',
-        'link' => '//umw.starfishsolutions.com/starfish-ops/session/casLogin.html',
+        'link' => '//umw.edu/starfish', // PrettyLink
         'name' => 'Starfish',
       ),
       11 => array(
         'icon' => 'links',
-        'link' => '//www.umw.edu/resources/',
+        'link' => '//www.umw.edu/resources/', // Standard link
         'name' => 'Helpful Links',
       ),
     ) );
-	
-	if ( time() >= strtotime( 'June 3, 2016 18:30 EDT' ) && time() <= strtotime( 'June 5, 2016 08:00 EDT' ) ) {
-		$this->icons[6]['link'] = 'http://technology.umw.edu/helpdesk/advisory/mytime-downtime-friday-evening-through-monday-morning/';
-	}
   }
 
   /**
@@ -269,19 +265,19 @@ class UMW_Online_Tools {
 
 		$menu_items = apply_filters( 'umw-global-audience-menu-items', array(
 			'students' => array(
-				'url' => sprintf( $host, '/students/', 'www' ),
+				'url' => sprintf( $host, '/students/', 'www' ), // Standard link
 				'label' => __( 'Students' )
 			),
 			'faculty' => array(
-				'url'   => sprintf( $host, '/in/', 'www' ),
+				'url'   => sprintf( $host, '/in/', 'www' ), // Standard link
 				'label' => __( 'Faculty &amp; Staff' )
 			),
 			'alumni' => array(
-				'url'   => sprintf( $host, '/alumni/', 'www' ),
+				'url'   => sprintf( $host, '/alumni/', 'www' ), // Redirected page
 				'label' => __( 'Alumni' ),
 			),
 			'give'   => array(
-				'url'   => sprintf( $host, '/give/', 'www' ),
+				'url'   => sprintf( $host, '/give/', 'www' ), // Redirected page
 				'label' => __( 'Give' ),
 			),
 		), $host );
