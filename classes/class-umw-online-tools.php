@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class UMW_Online_Tools {
-  public $v = '0.5.2.3';
+  public $v = '0.5.2.4';
   public $icons = array();
   public $options = array();
 
@@ -145,11 +145,16 @@ class UMW_Online_Tools {
         'link' => '//www.umw.edu/mytime/', // Redirected page
         'name' => 'MyTime',
       ),
-      7 => array(
+	  7 => array(
+		'icon' => 'eaglepay', 
+		'link' => '//umw.edu/eaglepay', // PrettyLink
+		'name' => 'EaglePay', 
+	  ),
+      /*7 => array(
         'icon' => 'eagleeye',
         'link' => '//umw.edu/eagleeye', // PrettyLink
         'name' => 'EagleEye',
-      ),
+      ),*/
       8 => array(
         'icon' => 'password',
         'link' => '//umw.edu/password', // PrettyLink
