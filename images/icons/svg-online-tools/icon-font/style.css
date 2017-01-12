@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?iej5ok');
-  src:  url('fonts/icomoon.eot?iej5ok#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?iej5ok') format('truetype'),
-    url('fonts/icomoon.woff?iej5ok') format('woff'),
-    url('fonts/icomoon.svg?iej5ok#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?dwra5v');
+  src:  url('fonts/icomoon.eot?dwra5v#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?dwra5v') format('truetype'),
+    url('fonts/icomoon.woff?dwra5v') format('woff'),
+    url('fonts/icomoon.svg?dwra5v#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -25,51 +25,51 @@
 }
 
 .icon-umwicon-eaglepay:before {
-  content: "\e90f";
-}
-.icon-umwicon-banner:before {
   content: "\e900";
 }
-.icon-umwicon-canvas:before {
-  content: "\e901";
+.icon-umwicon-myumw:before {
+  content: "\e601";
 }
-.icon-umwicon-directory:before {
-  content: "\e902";
-}
-.icon-umwicon-documents:before {
-  content: "\e903";
-}
-.icon-umwicon-eagleeye:before {
-  content: "\e904";
+.icon-umwicon-banner:before {
+  content: "\e606";
 }
 .icon-umwicon-eaglenet:before {
-  content: "\e905";
+  content: "\e60c";
 }
 .icon-umwicon-eagleone:before {
-  content: "\e906";
+  content: "\e600";
+}
+.icon-umwicon-canvas:before {
+  content: "\e602";
+}
+.icon-umwicon-directory:before {
+  content: "\e603";
+}
+.icon-umwicon-documents:before {
+  content: "\e604";
+}
+.icon-umwicon-eagleeye:before {
+  content: "\e605";
 }
 .icon-umwicon-email:before {
-  content: "\e907";
+  content: "\e607";
 }
 .icon-umwicon-eva:before {
-  content: "\e908";
+  content: "\e608";
 }
 .icon-umwicon-library:before {
-  content: "\e909";
+  content: "\e609";
 }
 .icon-umwicon-links:before {
-  content: "\e90a";
+  content: "\e60a";
 }
 .icon-umwicon-mytime:before {
-  content: "\e90b";
-}
-.icon-umwicon-myumw:before {
-  content: "\e90c";
+  content: "\e60b";
 }
 .icon-umwicon-password:before {
-  content: "\e90d";
+  content: "\e60d";
 }
 .icon-umwicon-starfish:before {
-  content: "\e90e";
+  content: "\e60e";
 }
 
