@@ -17,8 +17,8 @@ class UMW_Online_Tools {
    * Instantiate our object
    */
   function __construct() {
-    add_action( 'after_setup_theme', array( $this, 'after_setup_theme' ) );
-    add_action( 'init', array( $this, 'gather_icons' ) );
+	add_action( 'after_setup_theme', array( $this, 'after_setup_theme' ) );
+	add_action( 'init', array( $this, 'gather_icons' ) );
 	add_action( 'admin_init', array( $this, 'admin_init' ) );
   }
   
@@ -61,17 +61,17 @@ class UMW_Online_Tools {
    * @uses UMW_Online_Tools::is_main_umw_theme() to determine whether this site is using the main UMW theme
    */
   function after_setup_theme() {
-    if ( ! function_exists( 'genesis' ) ) {
-      return false;
-    }
+	if ( ! function_exists( 'genesis' ) ) {
+	  return false;
+	}
 
-    if ( has_action( 'genesis_before_header', 'umw_do_help_section' ) ) {
-      remove_action( 'genesis_before_header', 'umw_do_help_section' );
-    }
+	if ( has_action( 'genesis_before_header', 'umw_do_help_section' ) ) {
+	  remove_action( 'genesis_before_header', 'umw_do_help_section' );
+	}
 
-    add_action( 'genesis_before', array( $this, 'do_toolbar' ), 2 );
+	add_action( 'genesis_before', array( $this, 'do_toolbar' ), 2 );
 	add_action( 'genesis_before', array( $this, 'do_header_bar' ), 5 );
-    add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+	add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 	add_action( 'umw-main-header-bar', array( $this, 'do_audience_menu' ), 11 );
 
 	add_action( 'umw-main-header-bar', array( $this, 'do_wordmark' ), 5 );
@@ -98,7 +98,7 @@ class UMW_Online_Tools {
   function enqueue_styles() {
 	  wp_enqueue_script( 'umw-online-tools', plugins_url( '/scripts/umw-online-tools.js', dirname( __FILE__ ) ), array( 'jquery' ), $this->v, true );
 	wp_register_style( 'umw-online-tools-font', plugins_url( '/images/icons/svg-online-tools/icon-font/style.css', dirname( __FILE__ ) ), array(), $this->v, 'all' );
-    wp_enqueue_style( 'umw-online-tools', plugins_url( '/styles/umw-online-tools.css', dirname( __FILE__ ) ), array( 'umw-online-tools-font' ), $this->v, 'all' );
+	wp_enqueue_style( 'umw-online-tools', plugins_url( '/styles/umw-online-tools.css', dirname( __FILE__ ) ), array( 'umw-online-tools-font' ), $this->v, 'all' );
 	#wp_add_inline_style( 'umw-online-tools', 'body > .umw-helpful-links { background: rgb( 77, 107, 139 ); color: #fff; } body > .umw-helpful-links a { color: #fff; }' );
 	add_action( 'wp_print_styles', array( $this, 'do_header_bar_styles' ) );
   }
@@ -109,88 +109,88 @@ class UMW_Online_Tools {
    * @uses apply_filters() to apply the 'umw-online-tools-icons' filter to the array, allowing other plugins to modify the icon list
    */
   function gather_icons() {
-    $this->icons = apply_filters( 'umw-online-tools-icons', array(
-      0 => array(
+	$this->icons = apply_filters( 'umw-online-tools-icons', array(
+	  0 => array(
 		'icon' => 'myumw',
 		'link' => '//umw.edu/myumw', // PrettyLink
 		'name' => 'myUMW',
 	  ),
-      1 => array(
-        'icon' => 'banner',
-        'link' => '//umw.edu/banner', // PrettyLink
-        'name' => 'Banner',
-      ),
-      2 => array(
-        'icon' => 'canvas',
-        'link' => '//umw.edu/canvas', // PrettyLink
-        'name' => 'Canvas',
-      ),
-      3 => array(
-        'icon' => 'email',
-        'link' => '//umw.edu/email', // PrettyLink
-        'name' => 'Email',
-      ),
-      4 => array(
-        'icon' => 'library',
-        'link' => '//umw.edu/library', // Custom redirect?
-        'name' => 'Library',
-      ),
-      5 => array(
-        'icon' => 'eagleone',
-        'link' => '//umw.edu/eagleone', // PrettyLink
-        'name' => 'EagleOne',
-      ),
-      6 => array(
-        'icon' => 'mytime',
-        'link' => '//www.umw.edu/mytime/', // Redirected page
-        'name' => 'MyTime',
-      ),
+	  1 => array(
+		'icon' => 'banner',
+		'link' => '//umw.edu/banner', // PrettyLink
+		'name' => 'Banner',
+	  ),
+	  2 => array(
+		'icon' => 'canvas',
+		'link' => '//umw.edu/canvas', // PrettyLink
+		'name' => 'Canvas',
+	  ),
+	  3 => array(
+		'icon' => 'email',
+		'link' => '//umw.edu/email', // PrettyLink
+		'name' => 'Email',
+	  ),
+	  4 => array(
+		'icon' => 'library',
+		'link' => '//umw.edu/library', // Custom redirect?
+		'name' => 'Library',
+	  ),
+	  5 => array(
+		'icon' => 'eagleone',
+		'link' => '//umw.edu/eagleone', // PrettyLink
+		'name' => 'EagleOne',
+	  ),
+	  6 => array(
+		'icon' => 'mytime',
+		'link' => '//www.umw.edu/mytime/', // Redirected page
+		'name' => 'MyTime',
+	  ),
 	  7 => array(
 		'icon' => 'eaglepay', 
 		'link' => '//umw.edu/eaglepay', // PrettyLink
 		'name' => 'EaglePay', 
 	  ),
-      /*7 => array(
-        'icon' => 'eagleeye',
-        'link' => '//umw.edu/eagleeye', // PrettyLink
-        'name' => 'EagleEye',
-      ),*/
-      8 => array(
-        'icon' => 'password',
-        'link' => '//umw.edu/password', // PrettyLink
-        'name' => 'Passwords',
-      ),
-      9 => array(
-        'icon' => 'directory',
-        'link' => '//umw.edu/directory', // Standard link
-        'name' => 'Directory',
-      ),
-      10 => array(
-        'icon' => 'starfish',
-        'link' => '//umw.edu/starfish', // PrettyLink
-        'name' => 'Starfish',
-      ),
-      11 => array(
-        'icon' => 'links',
-        'link' => '//www.umw.edu/resources/', // Standard link
-        'name' => 'Helpful Links',
-      ),
-    ) );
+	  /*7 => array(
+		'icon' => 'eagleeye',
+		'link' => '//umw.edu/eagleeye', // PrettyLink
+		'name' => 'EagleEye',
+	  ),*/
+	  8 => array(
+		'icon' => 'password',
+		'link' => '//umw.edu/password', // PrettyLink
+		'name' => 'Passwords',
+	  ),
+	  9 => array(
+		'icon' => 'directory',
+		'link' => '//umw.edu/directory', // Standard link
+		'name' => 'Directory',
+	  ),
+	  10 => array(
+		'icon' => 'starfish',
+		'link' => '//umw.edu/starfish', // PrettyLink
+		'name' => 'Starfish',
+	  ),
+	  11 => array(
+		'icon' => 'links',
+		'link' => '//www.umw.edu/resources/', // Standard link
+		'name' => 'Helpful Links',
+	  ),
+	) );
   }
 
   /**
    * Output the global toolbar
    */
   function do_toolbar() {
-    $output = '';
-    $format = '<li><a href="%1$s" class="%5$s">%4$s</a></li>';
-    foreach ( $this->icons as $i ) {
-      /*if ( ! stristr( '//', $i['icon'] ) ) {
-        $i['icon'] = plugins_url( sprintf( 'images/icons/svg-online-tools/24px-white/umwicon-%1$s.png', $i['icon'] ), dirname( __FILE__ ) );
-      }*/
-      $output .= sprintf( $format, esc_url( $i['link'] ), esc_url( $i['icon'] ), $this->v, $i['name'], 'icon-umwicon-' . $i['icon'] );
-    }
-    printf( '<aside class="umw-helpful-links"><ul class="umw-tools" id="umw-online-tools">%s</ul><br style="clear:both;"/></aside>', $output );
+	$output = '';
+	$format = '<li><a href="%1$s" class="%5$s">%4$s</a></li>';
+	foreach ( $this->icons as $i ) {
+	  /*if ( ! stristr( '//', $i['icon'] ) ) {
+		$i['icon'] = plugins_url( sprintf( 'images/icons/svg-online-tools/24px-white/umwicon-%1$s.png', $i['icon'] ), dirname( __FILE__ ) );
+	  }*/
+	  $output .= sprintf( $format, esc_url( $i['link'] ), esc_url( $i['icon'] ), $this->v, $i['name'], 'icon-umwicon-' . $i['icon'] );
+	}
+	printf( '<aside class="umw-helpful-links"><ul class="umw-tools" id="umw-online-tools">%s</ul><br style="clear:both;"/></aside>', $output );
   }
 
 	/**
@@ -262,8 +262,8 @@ class UMW_Online_Tools {
 			$host = 'http://%2$s.umw.wtf%1$s';
 		} else if ( stristr( $h, '.red' ) || stristr( $h, 'umw.local' ) ) {
 			$host = 'http://%2$s.umw.red%1$s';
-        } else if ( stristr( $h, '.wpengine.com' ) ) {
-            $host = 'http://%2$s.umw.red%1$s';
+		} else if ( stristr( $h, '.wpengine.com' ) ) {
+			$host = 'http://%2$s.umw.red%1$s';
 		} else {
 			$host = 'http://%2$s.umw.edu%1$s';
 		}
@@ -282,7 +282,7 @@ class UMW_Online_Tools {
 				'label' => __( 'Alumni' ),
 			),
 			'give'   => array(
-				'url'   => sprintf( $host, '/give/', 'www' ), // Redirected page
+				'url'   => sprintf( $host, '/giving/', 'www' ), // Redirected page
 				'label' => __( 'Give' ),
 			),
 		), $host );
