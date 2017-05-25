@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class UMW_Online_Tools {
-	public $v = '0.5.2.6';
+	public $v = '0.5.2.7';
 	public $icons = array();
 	public $options = array();
 
@@ -127,11 +127,6 @@ class UMW_Online_Tools {
 				'link' => '//umw.edu/canvas', // PrettyLink
 				'name' => 'Canvas',
 			),
-			/*2  => array(
-				'icon' => 'campus',
-				'link' => '//umw.edu/canvas', // PrettyLink
-				'name' => 'Campus',
-			),*/
 			3  => array(
 				'icon' => 'email',
 				'link' => '//umw.edu/email', // PrettyLink
@@ -172,6 +167,11 @@ class UMW_Online_Tools {
 				'link' => '//umw.edu/directory', // Standard link
 				'name' => 'Directory',
 			),
+			10 => array(
+				'icon' => 'campus', 
+				'link' => '//umw.edu/campus', // PrettyLink
+				'name' => 'Campus', 
+			), 
 			10 => array(
 				'icon' => 'starfish',
 				'link' => '//umw.edu/starfish', // PrettyLink
