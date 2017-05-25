@@ -172,11 +172,11 @@ class UMW_Online_Tools {
 				'link' => '//umw.edu/campus', // PrettyLink
 				'name' => 'Campus', 
 			), 
-			10 => array(
+			/*10 => array(
 				'icon' => 'starfish',
 				'link' => '//umw.edu/starfish', // PrettyLink
 				'name' => 'Starfish',
-			),
+			),*/
 			11 => array(
 				'icon' => 'links',
 				'link' => '//www.umw.edu/resources/', // Standard link
