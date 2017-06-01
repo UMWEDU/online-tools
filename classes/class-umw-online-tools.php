@@ -170,7 +170,7 @@ class UMW_Online_Tools {
 			10 => array(
 				'icon' => 'campus', 
 				'link' => '//umw.edu/campus', // PrettyLink
-				'name' => 'Campus', 
+				'name' => 'EAB Tools',
 			), 
 			/*10 => array(
 				'icon' => 'starfish',
