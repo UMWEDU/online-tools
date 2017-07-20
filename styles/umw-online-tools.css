@@ -143,9 +143,7 @@
 	border: 1px solid transparent;
 }
 
-.umw-header-bar.no-global-header #umw-global-logo:hover,
 .umw-header-bar.no-global-header #umw-global-logo:focus,
-.custom-umw-theme .umw-header-bar #umw-global-logo:hover,
 .custom-umw-theme .umw-header-bar #umw-global-logo:focus {
 	border: 1px dotted #ffffff;
 }
