@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class UMW_Online_Tools {
-	public $v = '0.5.2.9';
+	public $v = '0.5.2.10';
 	public $icons = array();
 	public $options = array();
 
@@ -114,32 +114,32 @@ class UMW_Online_Tools {
 		$this->icons = apply_filters( 'umw-online-tools-icons', array(
 			0  => array(
 				'icon' => 'myumw',
-				'link' => '//umw.edu/myumw', // PrettyLink
+				'link' => '//www.umw.edu/myumw', // PrettyLink
 				'name' => 'myUMW',
 			),
 			1  => array(
 				'icon' => 'banner',
-				'link' => '//umw.edu/banner', // PrettyLink
+				'link' => '//www.umw.edu/banner', // PrettyLink
 				'name' => 'Banner',
 			),
 			2  => array(
 				'icon' => 'canvas',
-				'link' => '//umw.edu/canvas', // PrettyLink
+				'link' => '//www.umw.edu/canvas', // PrettyLink
 				'name' => 'Canvas',
 			),
 			3  => array(
 				'icon' => 'email',
-				'link' => '//umw.edu/email', // PrettyLink
+				'link' => '//www.umw.edu/email', // PrettyLink
 				'name' => 'Email',
 			),
 			4  => array(
 				'icon' => 'library',
-				'link' => '//umw.edu/library', // Custom redirect?
+				'link' => '//www.umw.edu/library', // Custom redirect?
 				'name' => 'Library',
 			),
 			5  => array(
 				'icon' => 'eagleone',
-				'link' => '//umw.edu/eagleone', // PrettyLink
+				'link' => '//www.umw.edu/eagleone', // PrettyLink
 				'name' => 'EagleOne',
 			),
 			6  => array(
@@ -149,32 +149,32 @@ class UMW_Online_Tools {
 			),
 			7  => array(
 				'icon' => 'eaglepay',
-				'link' => '//umw.edu/eaglepay', // PrettyLink
+				'link' => '//www.umw.edu/eaglepay', // PrettyLink
 				'name' => 'EaglePay',
 			),
 			/*7 => array(
 			  'icon' => 'eagleeye',
-			  'link' => '//umw.edu/eagleeye', // PrettyLink
+			  'link' => '//www.umw.edu/eagleeye', // PrettyLink
 			  'name' => 'EagleEye',
 			),*/
 			8  => array(
 				'icon' => 'password',
-				'link' => '//umw.edu/password', // PrettyLink
+				'link' => '//www.umw.edu/password', // PrettyLink
 				'name' => 'Passwords',
 			),
 			9  => array(
 				'icon' => 'directory',
-				'link' => '//umw.edu/directory', // Standard link
+				'link' => '//www.umw.edu/directory', // Standard link
 				'name' => 'Directory',
 			),
 			10 => array(
 				'icon' => 'campus', 
-				'link' => '//umw.edu/campus', // PrettyLink
+				'link' => '//www.umw.edu/campus', // PrettyLink
 				'name' => 'EAB Tools',
 			), 
 			/*10 => array(
 				'icon' => 'starfish',
-				'link' => '//umw.edu/starfish', // PrettyLink
+				'link' => '//www.umw.edu/starfish', // PrettyLink
 				'name' => 'Starfish',
 			),*/
 			11 => array(
