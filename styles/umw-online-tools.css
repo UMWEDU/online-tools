@@ -326,7 +326,7 @@ br.desktop-clear {
 }
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
-	font-family: icomoon;
+	font-family: 'umw-online-tool-icons';
 	font-weight: 300;
 	display: block;
 	line-height: 30px;
@@ -904,7 +904,7 @@ body fieldset.umw-search-choices-fieldset > legend {
   font-weight: 500;
 }
 #mega-menu-wrap-header-right #mega-menu-header-right li.mega-menu-item [class^="icon-"]:before, #mega-menu-wrap-header-right #mega-menu-header-right li.mega-menu-item [class*=" icon-"]:before {
-  font-family: icomoon;
+  font-family: 'umw-online-tool-icons';
   font-weight: 300;
   display: block;
   line-height: 30px;
