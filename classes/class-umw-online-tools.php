@@ -9,14 +9,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class UMW_Online_Tools {
-	public $v = '0.5.2.11';
+	public $v = '0.5.2.12';
 	public $icons = array();
 	public $options = array();
+	public $is_root = false;
+	public $needs_toolbar = true;
 
 	/**
 	 * Instantiate our object
 	 */
 	function __construct() {
+		/**
+		 * Somewhat hacky way to avoid pulling the toolbar into sites that use Outreach Pro
+		 *        on the old UMW site
+		 */
+		if ( defined( 'WP_DEFAULT_THEME' ) && 'umw' == WP_DEFAULT_THEME ) {
+			$theme = get_stylesheet();
+			if ( 'outreach-pro' == $theme ) {
+				return;
+			}
+		}
+
 		add_action( 'after_setup_theme', array( $this, 'after_setup_theme' ) );
 		add_action( 'init', array( $this, 'gather_icons' ) );
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
