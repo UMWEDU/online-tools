@@ -181,10 +181,10 @@ class UMW_Online_Tools {
 				'name' => 'Directory',
 			),
 			10 => array(
-				'icon' => 'campus', 
+				'icon' => 'campus',
 				'link' => '//www.umw.edu/campus', // PrettyLink
 				'name' => 'EAB Tools',
-			), 
+			),
 			/*10 => array(
 				'icon' => 'starfish',
 				'link' => '//www.umw.edu/starfish', // PrettyLink
@@ -333,6 +333,12 @@ class UMW_Online_Tools {
 				'global-bar'    => true,
 				'wordmark'      => true,
 				'audience-menu' => true
+			) );
+		} else if ( 'outreach-pro' == get_stylesheet() ) {
+			$options = apply_filters( 'umw-toolbar-default-settings-main', array(
+				'global-bar'    => true,
+				'wordmark'      => false,
+				'audience-menu' => true,
 			) );
 		}
 		$this->options = $options;
