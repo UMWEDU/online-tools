@@ -116,7 +116,7 @@ class UMW_Online_Tools {
 	 * @since  2020.03.30
 	 */
 	public function check_page_template() {
-		if ( ! is_page_template( 'landing_page.php' ) ) {
+		if ( ! is_page_template( 'page_landing.php' ) ) {
 			return;
 		}
 
