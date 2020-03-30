@@ -33,6 +33,7 @@ class UMW_Online_Tools {
 		add_action( 'after_setup_theme', array( $this, 'after_setup_theme' ) );
 		add_action( 'init', array( $this, 'gather_icons' ) );
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
+		add_action( 'wp', array( $this, 'check_page_template' ) );
 	}
 
 	/**
@@ -106,6 +107,23 @@ class UMW_Online_Tools {
 
 		remove_all_actions( 'umw_footer_nav' );
 	}
+
+	/**
+	 * Check to see if this is the Landing Page template or not; undo plugin changes if so
+     * @access public
+     * @since  2020.03.30
+     * @return void
+	 */
+	public function check_page_template() {
+	    if ( ! is_page_template( 'landing_page.php' ) ) {
+	        return;
+        }
+
+		remove_action( 'genesis_before', array( $this, 'do_toolbar' ), 2 );
+		remove_action( 'genesis_before', array( $this, 'do_header_bar' ), 5 );
+		remove_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+		remove_all_actions( 'umw-main-header-bar' );
+    }
 
 	/**
 	 * Setup any style sheets and extraneous CSS we need
