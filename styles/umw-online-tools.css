@@ -129,7 +129,7 @@
 .umw-header-bar #umw-global-logo {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	padding: 13px 0 13px;
+	padding: 9px 0 8px;
 	margin: 0;
 	float: left;
 	display: none;
@@ -150,9 +150,9 @@
 
 .umw-header-bar #umw-global-logo svg, 
 .umw-header-bar .umw-global-logo-img {
-	height: 17px;
+	height: 28px;
 	width: 336px;
-	max-height: 100%;
+	max-height: 8.333333333333333%;
 	max-width: 100%;
 }
 
