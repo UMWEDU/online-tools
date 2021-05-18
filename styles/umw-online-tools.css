@@ -34,7 +34,7 @@
 	float: left;
 	padding: 0;
 	margin: 0;
-	width: 100%;
+	width: 8.333333333333333%;
 	font-size: 11px;
 }
 
@@ -152,7 +152,7 @@
 .umw-header-bar .umw-global-logo-img {
 	height: 28px;
 	width: 336px;
-	max-height: 8.333333333333333%;
+	max-height: 100%;
 	max-width: 100%;
 }
 
