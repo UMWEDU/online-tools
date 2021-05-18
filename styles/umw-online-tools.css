@@ -34,7 +34,7 @@
 	float: left;
 	padding: 0;
 	margin: 0;
-	width: 8.333333333333333%;
+	width: 100%;
 	font-size: 11px;
 }
 
@@ -156,7 +156,7 @@
 	max-width: 100%;
 }
 
-.umw-header-bar #umw-global-logo svg .style0 {
+.umw-header-bar #umw-global-logo svg .st0 {
 	fill: #ffffff;
 }
 
@@ -783,7 +783,7 @@ body fieldset.umw-search-choices-fieldset > legend {
   max-height: 100%;
   max-width: 100%;
 }
-#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar #umw-global-logo svg .style0 {
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar #umw-global-logo svg .st0 {
   fill: #ffffff;
 }
 #mega-menu-wrap-header-right #mega-menu-header-right .artsGenesis #header {
