@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class UMW_Online_Tools {
-	public $v = '2021.05.18.03';
+	public $v = '2021.08.01.01';
 	public $icons = array();
 	public $options = array();
 	public $is_root = false;
@@ -272,17 +272,25 @@ class UMW_Online_Tools {
 		}
 
 		if ( function_exists( 'get_mnetwork_transient' ) ) {
+		    $v = get_mnetwork_transient( 'umw-global-logo-version', false );
 			$logo = get_mnetwork_transient( 'umw-global-logo', false );
 		} else {
+		    $v = get_site_transient( 'umw-global-logo-version', false );
 			$logo = get_site_transient( 'umw-global-logo', false );
 		}
+
+		if ( false === $v || $v !== $this->v ) {
+		    $logo = false;
+        }
 
 		if ( false === $logo ) {
 			/*$logo = get_bloginfo('stylesheet_directory') . '/images/logo_global.png';*/
 			$logo = str_replace( '</svg>', sprintf( '<image src="%1$s" alt="%2$s" xlink:href=""/></svg>', plugins_url( '/images/umw-wordmark.png', dirname( __FILE__ ) ), __( 'University of Mary Washington' ) ), file_get_contents( plugin_dir_path( dirname( __FILE__ ) ) . '/images/umw-wordmark.svg' ) );
 			if ( function_exists( 'set_mnetwork_transient' ) ) {
+				set_mnetwork_transient( 'umw-global-logo-version', $this->v, HOUR_IN_SECONDS );
 				set_mnetwork_transient( 'umw-global-logo', $logo, HOUR_IN_SECONDS );
 			} else {
+				set_site_transient( 'umw-global-logo-version', $this->v, HOUR_IN_SECONDS );
 				set_site_transient( 'umw-global-logo', $logo, HOUR_IN_SECONDS );
 			}
 		}
