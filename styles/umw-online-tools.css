@@ -129,7 +129,7 @@
 .umw-header-bar #umw-global-logo {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	padding: 13px 0 13px;
+	padding: 9px 0 8px;
 	margin: 0;
 	float: left;
 	display: none;
@@ -150,13 +150,13 @@
 
 .umw-header-bar #umw-global-logo svg, 
 .umw-header-bar .umw-global-logo-img {
-	height: 17px;
+	height: 28px;
 	width: 336px;
 	max-height: 100%;
 	max-width: 100%;
 }
 
-.umw-header-bar #umw-global-logo svg .style0 {
+.umw-header-bar #umw-global-logo svg .st0 {
 	fill: #ffffff;
 }
 
@@ -783,7 +783,7 @@ body fieldset.umw-search-choices-fieldset > legend {
   max-height: 100%;
   max-width: 100%;
 }
-#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar #umw-global-logo svg .style0 {
+#mega-menu-wrap-header-right #mega-menu-header-right .umw-header-bar #umw-global-logo svg .st0 {
   fill: #ffffff;
 }
 #mega-menu-wrap-header-right #mega-menu-header-right .artsGenesis #header {
