@@ -1,70 +1,62 @@
 @font-face {
-	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot?-v2pe5q');
-	src:url('fonts/icomoon.eot?#iefix-v2pe5q') format('embedded-opentype'),
-		url('fonts/icomoon.ttf?-v2pe5q') format('truetype'),
-		url('fonts/icomoon.woff?-v2pe5q') format('woff'),
-		url('fonts/icomoon.svg?-v2pe5q#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'umw-online-tool-icons';
+  src:  url('fonts/icomoon.eot?f855fr');
+  src:  url('fonts/icomoon.eot?f855fr#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?f855fr') format('truetype'),
+    url('fonts/icomoon.woff?f855fr') format('woff'),
+    url('fonts/icomoon.svg?f855fr#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 [class^="icon-"], [class*=" icon-"] {
-	font-family: 'icomoon';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'umw-online-tool-icons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
 
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-umwicon-campus:before {
+  content: "\e901";
+}
+.icon-umwicon-eaglepay:before {
+  content: "\e900";
+}
 .icon-umwicon-myumw:before {
-	content: "\e601";
+  content: "\e601";
 }
 .icon-umwicon-banner:before {
-	content: "\e606";
-}
-.icon-umwicon-eaglenet:before {
-	content: "\e60c";
+  content: "\e606";
 }
 .icon-umwicon-eagleone:before {
-	content: "\e600";
+  content: "\e600";
 }
 .icon-umwicon-canvas:before {
-	content: "\e602";
+  content: "\e602";
 }
 .icon-umwicon-directory:before {
-	content: "\e603";
-}
-.icon-umwicon-documents:before {
-	content: "\e604";
-}
-.icon-umwicon-eagleeye:before {
-	content: "\e605";
+  content: "\e603";
 }
 .icon-umwicon-email:before {
-	content: "\e607";
-}
-.icon-umwicon-eva:before {
-	content: "\e608";
+  content: "\e607";
 }
 .icon-umwicon-library:before {
-	content: "\e609";
+  content: "\e609";
 }
 .icon-umwicon-links:before {
-	content: "\e60a";
+  content: "\e60a";
 }
 .icon-umwicon-mytime:before {
-	content: "\e60b";
+  content: "\e60b";
 }
 .icon-umwicon-password:before {
-	content: "\e60d";
-}
-.icon-umwicon-starfish:before {
-	content: "\e60e";
+  content: "\e60d";
 }
