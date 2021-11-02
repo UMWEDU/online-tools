@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5492ecdb-6547-4ba6-93f5-359f3aeddb71" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/classes/class-umw-online-tools.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/class-umw-online-tools.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="mindpower-brand" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$USER_HOME$/Local Sites/umw-provost/app/public" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="873" />
+  </component>
+  <component name="ProjectId" id="1WnwRfxPuaRF9LiNzmUfTmacVRD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="SVG" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../UMW Analytics" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5492ecdb-6547-4ba6-93f5-359f3aeddb71" name="Default" comment="" />
+      <created>1495725415131</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1495725415131</updated>
+      <workItem from="1495725416247" duration="537000" />
+      <workItem from="1496325451357" duration="745000" />
+      <workItem from="1500561940477" duration="1765000" />
+      <workItem from="1510156600997" duration="752000" />
+      <workItem from="1529951339761" duration="1001000" />
+      <workItem from="1535045843364" duration="879000" />
+      <workItem from="1540565493188" duration="1472000" />
+      <workItem from="1543421923264" duration="57000" />
+      <workItem from="1579798661237" duration="188000" />
+      <workItem from="1579882524167" duration="1540000" />
+      <workItem from="1580341749771" duration="78000" />
+      <workItem from="1585594955211" duration="480000" />
+      <workItem from="1585595631033" duration="273000" />
+      <workItem from="1585679993145" duration="569000" />
+      <workItem from="1585745893144" duration="327000" />
+      <workItem from="1586870460649" duration="23000" />
+      <workItem from="1621349268778" duration="2676000" />
+      <workItem from="1627907420360" duration="1637000" />
+      <workItem from="1633955016820" duration="1000000" />
+      <workItem from="1634045299048" duration="22000" />
+    </task>
+    <task id="LOCAL-00001" summary="Update name of new &quot;Campus&quot; &quot;EAB Tools&quot; icon">
+      <created>1496325595061</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1496325595061</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fix CSS typo">
+      <created>1500562644137</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1500562644137</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add &quot;www&quot; to all short-links to get around some DNS issues">
+      <created>1529951719615</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1529951719615</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Change `font-family` name of icon font to avoid conflicts with other IcoMoon usage">
+      <created>1540565897311</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1540565897311</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Attempt to fix issue that was causing wordmark to appear on sites that include main, full logo">
+      <created>1579883739768</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1579883739768</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Attempt to stop toolbar from being output on Landing Page template">
+      <created>1585595367220</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1585595367220</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Minor formatting changes">
+      <created>1585595399258</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1585595399258</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fix incorrect template reference">
+      <created>1585595699776</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1585595699776</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Attempt to replace old logo with Mindpower logo">
+      <created>1621350118152</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1621350118152</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Tweak new Mindpower logo styles">
+      <created>1621351338007</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1621351338007</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Tweak new Mindpower logo styles">
+      <created>1621351758320</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1621351758320</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Tweak new Mindpower logo styles">
+      <created>1633955056850</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1633955056850</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update name of new &quot;Campus&quot; &quot;EAB Tools&quot; icon" />
+    <MESSAGE value="Fix CSS typo" />
+    <MESSAGE value="Add &quot;www&quot; to all short-links to get around some DNS issues" />
+    <MESSAGE value="Change `font-family` name of icon font to avoid conflicts with other IcoMoon usage" />
+    <MESSAGE value="Attempt to fix issue that was causing wordmark to appear on sites that include main, full logo" />
+    <MESSAGE value="Attempt to stop toolbar from being output on Landing Page template" />
+    <MESSAGE value="Minor formatting changes" />
+    <MESSAGE value="Fix incorrect template reference" />
+    <MESSAGE value="Attempt to replace old logo with Mindpower logo" />
+    <MESSAGE value="Tweak new Mindpower logo styles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tweak new Mindpower logo styles" />
+  </component>
+  <component name="WordPressConfiguration" enabled="true">
+    <wordpressPath>$USER_HOME$/Local Sites/umw-provost/app/public</wordpressPath>
+  </component>
+</project>
