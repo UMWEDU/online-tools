@@ -399,7 +399,7 @@ aside.umw-header-bar {
 	position: relative;
 	z-index: 250;
 	width: 100%;
-	background: rgb( 0, 48, 94 );
+	background: #002D61;
 }
 
 .umw-header-bar > .wrap {
