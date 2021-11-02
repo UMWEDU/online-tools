@@ -272,16 +272,16 @@ class UMW_Online_Tools {
 		}
 
 		if ( function_exists( 'get_mnetwork_transient' ) ) {
-		    $v = get_mnetwork_transient( 'umw-global-logo-version', false );
+			$v    = get_mnetwork_transient( 'umw-global-logo-version', false );
 			$logo = get_mnetwork_transient( 'umw-global-logo', false );
 		} else {
-		    $v = get_site_transient( 'umw-global-logo-version', false );
+			$v    = get_site_transient( 'umw-global-logo-version', false );
 			$logo = get_site_transient( 'umw-global-logo', false );
 		}
 
 		if ( false === $v || $v !== $this->v ) {
-		    $logo = false;
-        }
+			$logo = false;
+		}
 
 		if ( false === $logo ) {
 			/*$logo = get_bloginfo('stylesheet_directory') . '/images/logo_global.png';*/
