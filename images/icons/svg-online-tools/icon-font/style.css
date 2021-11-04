@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'icomoon';
+  font-family: 'umw-online-tool-icons';
   src:  url('fonts/icomoon.eot?10znos');
   src:  url('fonts/icomoon.eot?10znos#iefix') format('embedded-opentype'),
     url('fonts/icomoon.ttf?10znos') format('truetype'),
@@ -12,7 +12,7 @@
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: 'umw-online-tool-icons' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
